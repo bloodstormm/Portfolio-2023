@@ -4,6 +4,7 @@ import { Header } from "../../components/Header";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { LoaderLayer } from "../LoaderLayer";
+import { Footer } from "../Footer";
 
 export const RoutesContainer = () => {
   const path = useLocation();
@@ -31,6 +32,7 @@ export const RoutesContainer = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
             </Routes>
+            {path.pathname !== "/" && <Footer />}
           </AnimatePresence>
         </>
       )}

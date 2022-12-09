@@ -30,21 +30,21 @@ export const Home = () => {
             <div className="flex gap-10 pt-6 text-3xl">
               <a
                 href="https://www.instagram.com/_nicolasantoss/"
-                className="transition hover:text-[#c5995d]"
+                className="transition hover:text-accent"
                 target="_blank"
               >
                 <BsInstagram />
               </a>
               <a
                 href="https://www.linkedin.com/in/nicolas-malachias/"
-                className="transition hover:text-[#c5995d]"
+                className="transition hover:text-accent"
                 target="_blank"
               >
                 <FaLinkedinIn />
               </a>
               <a
                 href="https://github.com/bloodstormm"
-                className="transition hover:text-[#c5995d]"
+                className="transition hover:text-accent"
                 target="_blank"
               >
                 <BsGithub />
@@ -67,7 +67,7 @@ export const Home = () => {
               Nícolas Malachias
             </h1>
             <div className="absolute -bottom-4 left-14 flex h-40 w-40 items-center justify-center rounded-full border border-[#3d3731] xl:bottom-0">
-              <div className="absolute top-1 right-5 h-6 w-6 rounded-full bg-[#c5995d]"></div>
+              <div className="absolute top-1 right-5 h-6 w-6 rounded-full bg-accent"></div>
               <p className="w-20">Entrar em contato</p>
               <BsArrowUpRight className="h-5 w-5" />
             </div>
@@ -78,7 +78,7 @@ export const Home = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -70, opacity: 0 }}
           transition={{ ...transition, duration: 1.25 }}
-          className="mt-6 flex w-full justify-center gap-20  p-8"
+          className=" flex w-full justify-center gap-20  p-6"
         >
           <img src={jnj} alt="jnj" className="h-16 grayscale" />
           <img src={opt} alt="opt" className="h-16 grayscale" />
@@ -91,7 +91,7 @@ export const Home = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 0.8 } }}
         exit={{ opacity: 0, transition: { duration: 0.8 } }}
-        className="absolute bottom-0 left-20 h-96 w-72 rounded-t-full bg-gradient-to-br from-[#c5995d]  to-transparent p-px "
+        className="absolute bottom-0 left-20 h-96 w-72 rounded-t-full bg-gradient-to-br from-accent  to-transparent p-px "
       >
         <div className="h-full w-full rounded-t-full bg-background"></div>
       </motion.div>
@@ -100,7 +100,7 @@ export const Home = () => {
         animate={{ opacity: 1, transition: { duration: 0.8 } }}
         exit={{ opacity: 0, transition: { duration: 0.8 } }}
         className="absolute top-0 -right-0 h-64 w-56 rounded-b-full bg-gradient-to-tl
-         from-[#c5995d] to-transparent p-px "
+         from-accent to-transparent p-px "
       >
         <div className="h-full w-full rounded-b-full bg-background"></div>
       </motion.div>

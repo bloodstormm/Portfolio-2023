@@ -15,7 +15,7 @@ export const Header = () => {
       <div className="container mx-auto flex items-center justify-between ">
         <Link
           to="/"
-          className="font-Odasans text-5xl font-semibold text-[#c5995d]"
+          className="font-Odasans text-5xl font-semibold text-accent"
         >
           NCLS
         </Link>
@@ -23,10 +23,11 @@ export const Header = () => {
         <div className="flex gap-16 font-medium">
           <Link to="about">Sobre Mim</Link>
           <Link to="projects">Projetos</Link>
+          <Link to="contact">Experiências</Link>
           <Link to="contact">Contato</Link>
         </div>
 
-        <button className="flex items-center gap-3 rounded-3xl bg-[#c5995d] py-3 px-5 text-white">
+        <button className="flex items-center gap-3 rounded-3xl bg-accent py-3 px-5 text-white">
           Baixar Currículo
           <BsDownload />
         </button>
