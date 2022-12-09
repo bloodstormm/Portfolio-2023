@@ -1,9 +1,11 @@
 import { RoutesContainer } from "./components/RoutesContainer";
-
+import { BrowserRouter as Router } from "react-router-dom";
 function App() {
   return (
     <div className="container mx-auto min-h-screen w-full">
-      <RoutesContainer />
+      <Router>
+        <RoutesContainer />
+      </Router>
     </div>
   );
 }

@@ -16,4 +16,9 @@
   body {
     @apply bg-background text-darkBrown font-Poppins;
   }
+
+  .dotsGrid {
+    background: radial-gradient(#c5995d 2px, transparent 2px);
+    background-size: 22px 22px;
+  }
 }
