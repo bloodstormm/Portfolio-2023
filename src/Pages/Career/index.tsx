@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { transition } from "../../utils/Transition";
 
-export const Projects = () => {
+export const Career = () => {
   return (
     <>
       <motion.div
@@ -14,13 +14,14 @@ export const Projects = () => {
         transition={{ ...transition, duration: 1 }}
         className="absolute left-0 z-30 h-screen w-full bg-[#e6c291]"
       ></motion.div>
+
       <motion.section
         initial={{ visibility: "hidden" }}
         animate={{ visibility: "visible" }}
         exit={{ visibility: "hidden", transition: { delay: 1 } }}
         className=" flex h-[80vh] w-full items-center justify-center font-Wulkan text-7xl"
       >
-        Projects
+        Career
       </motion.section>
     </>
   );

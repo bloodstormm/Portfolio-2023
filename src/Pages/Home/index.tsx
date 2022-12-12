@@ -8,6 +8,16 @@ import { transition } from "../../utils/Transition";
 export const Home = () => {
   return (
     <>
+      <motion.div
+        initial={{ height: window.innerHeight }}
+        animate={{
+          height: 0,
+          top: [0, window.innerHeight],
+        }}
+        exit={{ height: window.innerHeight, top: [0, 0] }}
+        transition={{ ...transition, duration: 1 }}
+        className="absolute left-0 z-30 h-screen w-full bg-[#e6c291]"
+      ></motion.div>
       <section className="relative z-20 w-full overflow-hidden">
         <motion.div
           initial={{ y: 200, opacity: 0 }}

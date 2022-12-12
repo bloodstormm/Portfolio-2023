@@ -22,45 +22,39 @@ export const About = () => {
       y: 0,
       opacity: 1,
       transition: {
-        ease: [1.2, 0.01, -0.05, 0.95],
-        duration: 2.5,
+        ease: [0.6, 0.01, -0.05, 0.95],
+        duration: 2,
       },
     },
-    exit: { y: 200, opacity: 0 },
+    exit: { opacity: 0 },
   };
   const slideDown = {
-    hidden: { y: -200, opacity: 0 },
+    hidden: { y: -70, opacity: 0 },
     show: {
       y: 0,
       opacity: 1,
       transition: {
         ...transition,
         duration: 2,
-        delay: 1,
       },
     },
-    exit: { y: -200, opacity: 0, transition: { ...transition, delay: 0 } },
+    exit: { y: -70, opacity: 0, transition: { ...transition, delay: 0 } },
   };
 
   return (
     <>
       <motion.div
-        initial={{ height: 0 }}
+        initial={{ height: window.innerHeight }}
         animate={{
-          height: [0, window.innerHeight, 0],
-          top: [0, 0, window.innerHeight],
+          height: [window.innerHeight, 0],
+          top: [0, window.innerHeight],
         }}
-        exit={{ height: [0, window.innerHeight, 0], top: [null, 0, 0] }}
-        transition={{ ...transition, duration: 2, times: [0, 0.5, 1] }}
+        exit={{ height: [0, window.innerHeight], top: [0, 0] }}
+        transition={{ ...transition, duration: 1 }}
         className="absolute left-0 z-20 h-screen w-full bg-[#e6c291]"
       ></motion.div>
 
-      <motion.section
-        initial={{ visibility: "hidden" }}
-        animate={{ visibility: "visible", transition: { delay: 1 } }}
-        exit={{ visibility: "hidden", transition: { delay: 1 } }}
-        className="flex min-h-[70vh] w-full grid-cols-2 gap-12"
-      >
+      <motion.section className="flex min-h-[70vh] w-full gap-12">
         <motion.div
           variants={slideDown}
           initial="hidden"
@@ -82,7 +76,7 @@ export const About = () => {
 
           <div className="mx-auto w-[90%] border border-darkBrown/10"></div>
 
-          <div className="m-6 mx-auto flex w-fit   gap-8 rounded-xl bg-accent/20 p-6 font-Wulkan text-3xl">
+          <div className="m-6 mx-auto flex w-fit gap-8 rounded-xl bg-accent/20 p-6 font-Wulkan text-3xl">
             <h2>
               <span className="mr-2 font-semibold text-accent">6+</span>
               Projetos feitos
@@ -102,7 +96,7 @@ export const About = () => {
           >
             <motion.div
               variants={itemAnimation}
-              className="max-w-[17rem] rounded-xl bg-[#f2e9e1] p-6 transition hover:drop-shadow"
+              className="max-w-[17rem] rounded-xl bg-[#f2e9e1] p-6 hover:drop-shadow"
             >
               <HiOutlineCodeBracket className="mx-auto mb-2 text-4xl text-accent" />
               <h3 className="text-center text-lg font-semibold ">
@@ -115,7 +109,7 @@ export const About = () => {
             </motion.div>
             <motion.div
               variants={itemAnimation}
-              className="max-w-[17rem] rounded-xl bg-[#f2e9e1] p-6 transition hover:drop-shadow"
+              className="max-w-[17rem] rounded-xl bg-[#f2e9e1] p-6 hover:drop-shadow"
             >
               <HiOutlineComputerDesktop className="mx-auto mb-2 text-4xl text-accent" />
               <h3 className="text-center text-lg font-semibold ">
@@ -128,7 +122,7 @@ export const About = () => {
             </motion.div>
             <motion.div
               variants={itemAnimation}
-              className="max-w-[17rem] rounded-xl bg-[#f2e9e1] p-6 transition hover:drop-shadow"
+              className="max-w-[17rem] rounded-xl bg-[#f2e9e1] p-6 hover:drop-shadow"
             >
               <HiOutlineScale className="mx-auto mb-2 text-4xl text-accent" />
               <h3 className="text-center text-lg font-semibold ">
@@ -142,12 +136,18 @@ export const About = () => {
           </motion.div>
         </motion.div>
 
-        <div className="relative mx-auto w-2/6 overflow-hidden rounded-2xl bg-pink-400 ">
+        <motion.div
+          initial={{ x: 120, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: 120, opacity: 0, transition: { ...transition, delay: 0 } }}
+          transition={{ ...transition, duration: 1.45, delay: 0.5 }}
+          className="relative mx-auto w-2/6 overflow-hidden rounded-2xl"
+        >
           <motion.img
-            whileHover={{ scale: 1.1, transition: { ...transition, delay: 0 } }}
+            whileHover={{ scale: 1.1 }}
             initial={{ scale: 1.15 }}
             animate={{ scale: 1 }}
-            transition={{ ...transition, duration: 1.45, delay: 1.5 }}
+            transition={{ ...transition, duration: 1.45 }}
             src={aboutPic}
             className="absolute inset-0 h-full w-full rounded-2xl object-cover "
             alt=""
@@ -162,7 +162,7 @@ export const About = () => {
               Foto tirada em São José dos Campos, no Shopping Colinas, em 2022.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         <div className="dotsGrid absolute left-0 top-0 h-40 w-40"></div>
         <div className="dotsGrid absolute bottom-0 h-16 w-64"></div>

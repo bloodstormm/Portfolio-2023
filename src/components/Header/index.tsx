@@ -23,7 +23,7 @@ export const Header = () => {
         <div className="flex gap-16 font-medium">
           <Link to="about">Sobre Mim</Link>
           <Link to="projects">Projetos</Link>
-          <Link to="contact">Experiências</Link>
+          <Link to="contact">Carreira</Link>
           <Link to="contact">Contato</Link>
         </div>
 

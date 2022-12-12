@@ -8,20 +8,20 @@ import { Footer } from "../Footer";
 
 export const RoutesContainer = () => {
   const path = useLocation();
-  const [showContent, setShowContent] = useState(false);
+  const [showContent, setShowContent] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 800);
+  // Possivel solução pra uma tela de loader
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowContent(true);
+  //   }, 1);
 
-    return () => clearTimeout(timer);
-  });
+  //   return () => clearTimeout(timer);
+  // });
 
-  console.log(showContent);
   return (
     <>
-      <LoaderLayer showContent={showContent} />
+      {/* <LoaderLayer showContent={showContent} /> */}
       <Header />
       {showContent && (
         <>
