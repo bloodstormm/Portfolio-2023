@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { EducationTimeline } from "../../components/EducationTimeline";
+import { ExperiencesTimeline } from "../../components/ExperiencesTimeline";
 import { transition } from "../../utils/Transition";
 
 export const Career = () => {
@@ -19,9 +21,14 @@ export const Career = () => {
         initial={{ visibility: "hidden" }}
         animate={{ visibility: "visible" }}
         exit={{ visibility: "hidden", transition: { delay: 1 } }}
-        className=" flex h-[80vh] w-full items-center justify-center font-Wulkan text-7xl"
+        className="mb-12 flex w-full flex-col items-center"
       >
-        Career
+        <h1 className=" mb-12 font-Wulkan text-7xl">Minha Carreira:</h1>
+
+        <div className="flex gap-16 divide-x divide-darkBrown/40">
+          <ExperiencesTimeline />
+          <EducationTimeline />
+        </div>
       </motion.section>
     </>
   );

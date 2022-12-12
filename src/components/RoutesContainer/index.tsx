@@ -1,10 +1,13 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Home, Contact, Projects, About } from "../../Pages";
-import { Header } from "../../components/Header";
-import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { LoaderLayer } from "../LoaderLayer";
+
+import { AnimatePresence } from "framer-motion";
+
+import { Home, Contact, Projects, About, Career } from "../../Pages";
+
+import { Header } from "../Header";
 import { Footer } from "../Footer";
+import { LoaderLayer } from "../LoaderLayer";
 
 export const RoutesContainer = () => {
   const path = useLocation();
@@ -31,6 +34,7 @@ export const RoutesContainer = () => {
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
+              <Route path="/career" element={<Career />} />
             </Routes>
             {path.pathname !== "/" && <Footer />}
           </AnimatePresence>

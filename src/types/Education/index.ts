@@ -1,10 +1,10 @@
 import { IconBaseProps } from "react-icons";
 
-export type ExperiencesType = {
-  company: string;
+export type EducationType = {
+  institution: string;
+  course: string;
   initialDate: string;
   finalDate: string;
-  role: string;
+  degree: string;
   description?: string;
-  stack: React.ComponentType<IconBaseProps>[];
 };

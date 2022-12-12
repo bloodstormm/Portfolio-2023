@@ -14,7 +14,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-darkBrown font-Poppins selection:bg-accent;
+    @apply bg-background text-darkBrown font-Poppins selection:bg-accent selection:text-darkBrown;
   }
 
   .dotsGrid {
