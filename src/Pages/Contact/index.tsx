@@ -4,28 +4,9 @@ import { transition } from "../../utils/Transition";
 import { BsInstagram } from "react-icons/bs";
 import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
+import { container, itemAnimation } from "../../utils/StaggerItems";
 
 export const Contact = () => {
-  const container = {
-    show: {
-      transition: {
-        staggerChildren: 0.4,
-      },
-    },
-  };
-
-  const itemAnimation = {
-    hidden: { y: 200, opacity: 0 },
-    show: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        ease: [0.6, 0.01, -0.05, 0.95],
-        duration: 2,
-      },
-    },
-    exit: { opacity: 0 },
-  };
   return (
     <>
       <motion.div

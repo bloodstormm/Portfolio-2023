@@ -6,28 +6,9 @@ import {
   HiOutlineScale,
 } from "react-icons/hi2";
 import { transition } from "../../utils/Transition";
+import { container, itemAnimation } from "../../utils/StaggerItems";
 
 export const About = () => {
-  const container = {
-    show: {
-      transition: {
-        staggerChildren: 0.4,
-      },
-    },
-  };
-
-  const itemAnimation = {
-    hidden: { y: 200, opacity: 0 },
-    show: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        ease: [0.6, 0.01, -0.05, 0.95],
-        duration: 2,
-      },
-    },
-    exit: { opacity: 0 },
-  };
   const slideDown = {
     hidden: { y: -70, opacity: 0 },
     show: {
@@ -149,7 +130,7 @@ export const About = () => {
             animate={{ scale: 1 }}
             transition={{ ...transition, duration: 1.45 }}
             src={aboutPic}
-            className="absolute inset-0 h-full w-full rounded-2xl object-cover "
+            className="absolute inset-0 h-full w-full rounded-2xl object-cover object-center "
             alt=""
           />
 

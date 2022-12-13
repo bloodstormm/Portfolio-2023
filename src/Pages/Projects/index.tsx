@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import { ProjectCard } from "../../components/ProjectCard";
+import { projects } from "../../constants/Projects";
+import { container } from "../../utils/StaggerItems";
 import { transition } from "../../utils/Transition";
 
 export const Projects = () => {
@@ -18,9 +21,21 @@ export const Projects = () => {
         initial={{ visibility: "hidden" }}
         animate={{ visibility: "visible" }}
         exit={{ visibility: "hidden", transition: { delay: 1 } }}
-        className=" flex h-[80vh] w-full items-center justify-center font-Wulkan text-7xl"
+        className="mb-16 flex w-full flex-col items-center"
       >
-        Projects
+        <h1 className="mb-9 font-Wulkan text-5xl">Últimos Projetos</h1>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+          className="grid grid-cols-2 gap-12"
+        >
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} position={index} />
+          ))}
+        </motion.div>
       </motion.section>
     </>
   );
