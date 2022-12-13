@@ -10,7 +10,7 @@ export const Header = () => {
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: 120, opacity: 0 }}
       transition={{ ...transition, duration: 1, delay: 1.6 }}
-      className="relative z-20 flex p-8"
+      className="sticky top-0 z-20 flex bg-background/40 p-8 backdrop-blur-md"
     >
       <div className="container mx-auto flex items-center justify-between ">
         <Link

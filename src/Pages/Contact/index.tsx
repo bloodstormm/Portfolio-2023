@@ -1,7 +1,31 @@
 import { motion } from "framer-motion";
 import { transition } from "../../utils/Transition";
 
+import { BsInstagram } from "react-icons/bs";
+import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+
 export const Contact = () => {
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.4,
+      },
+    },
+  };
+
+  const itemAnimation = {
+    hidden: { y: 200, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        ease: [0.6, 0.01, -0.05, 0.95],
+        duration: 2,
+      },
+    },
+    exit: { opacity: 0 },
+  };
   return (
     <>
       <motion.div
@@ -19,9 +43,71 @@ export const Contact = () => {
         initial={{ visibility: "hidden" }}
         animate={{ visibility: "visible" }}
         exit={{ visibility: "hidden", transition: { delay: 1 } }}
-        className=" flex h-[80vh] w-full items-center justify-center font-Wulkan text-7xl"
+        className=" flex h-[80vh] w-full flex-col items-center justify-center "
       >
-        Contact
+        <div className="overflow-hidden text-center">
+          <motion.h1
+            initial={{ y: 300 }}
+            animate={{ y: 0 }}
+            exit={{ y: 400 }}
+            transition={{ ...transition, duration: 1.6 }}
+            className="max-w-6xl font-Wulkan text-7xl"
+          >
+            Quer me contratar ou me conhecer um pouco mais?
+          </motion.h1>
+
+          <motion.h3
+            initial={{ y: 300 }}
+            animate={{ y: 0 }}
+            exit={{ y: 400 }}
+            transition={{ ...transition, duration: 1.6 }}
+            className="pt-12 pb-6 font-medium"
+          >
+            Entre em contato:
+          </motion.h3>
+        </div>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+          className="flex items-center justify-center gap-10  text-3xl"
+        >
+          <motion.a
+            variants={itemAnimation}
+            href="https://api.whatsapp.com/send?phone=5512988770308"
+            className="hover:text-accent"
+            target="_blank"
+          >
+            <FaWhatsapp />
+          </motion.a>
+          <motion.a
+            variants={itemAnimation}
+            href="https://www.instagram.com/_nicolasantoss/"
+            className="hover:text-accent"
+            target="_blank"
+          >
+            <BsInstagram />
+          </motion.a>
+          <motion.a
+            variants={itemAnimation}
+            href="mailto:nicolasmalaquias2015@hotmail.com"
+            className="hover:text-accent"
+            target="_blank"
+          >
+            <HiOutlineMail />
+          </motion.a>
+
+          <motion.a
+            variants={itemAnimation}
+            href="https://www.linkedin.com/in/nicolas-malachias/"
+            className="hover:text-accent"
+            target="_blank"
+          >
+            <FaLinkedinIn />
+          </motion.a>
+        </motion.div>
       </motion.section>
     </>
   );

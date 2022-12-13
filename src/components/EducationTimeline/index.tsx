@@ -36,7 +36,7 @@ export const EducationTimeline = () => {
               ></div>
 
               <div
-                className="flex w-96 flex-col justify-center
+                className="flex w-[29rem] flex-col justify-center
                rounded-xl bg-accent/20 p-4 text-base transition duration-300 hover:brightness-110"
               >
                 <p className="mb-1 text-xs text-accent">
@@ -44,9 +44,13 @@ export const EducationTimeline = () => {
                 </p>
 
                 {/* Se o curso ja estiver concluido, adicionar um concluido */}
-                {today.isAfter(formatDate(finalDate)) && (
+                {today.isAfter(formatDate(finalDate)) ? (
                   <p className="absolute top-2 right-2 rounded-xl bg-accent/60 py-1 px-3 text-xs">
                     Concluído!
+                  </p>
+                ) : (
+                  <p className="absolute top-2 right-2 rounded-xl bg-accent/60 py-1 px-3 text-xs">
+                    {degree}
                   </p>
                 )}
                 <h2 className=" font-semibold">{institution}</h2>

@@ -68,7 +68,7 @@ export const About = () => {
 
           <p className="max-w-2xl py-8">
             Olá, me chamo Nícolas Malachias. Tenho 18 anos e atualmente sou
-            estudante de Análise e Desenvolvimento de Sistemas na UNITAU e estou
+            estudante de Análise e Desenvolvimento de Sistemas na UNITAU. Estou
             estagiando na Jhonson & Jhonson na área de TI. Amo música e curto
             muito tocar violão, guitarra além de praticar ciclismo e jogar
             basquete algumas vezes.

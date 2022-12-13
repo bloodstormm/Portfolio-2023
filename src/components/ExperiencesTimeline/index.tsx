@@ -18,7 +18,7 @@ export const ExperiencesTimeline = () => {
               ></div>
 
               <div
-                className="flex w-96 flex-col justify-center
+                className="flex w-[29rem] flex-col justify-center
                rounded-xl bg-accent/20 p-4 text-base transition duration-300 hover:brightness-110"
               >
                 <p className="mb-1 text-xs text-accent">

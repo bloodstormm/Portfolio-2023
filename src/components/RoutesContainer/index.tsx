@@ -36,7 +36,9 @@ export const RoutesContainer = () => {
               <Route path="/about" element={<About />} />
               <Route path="/career" element={<Career />} />
             </Routes>
-            {path.pathname !== "/" && <Footer />}
+            {path.pathname !== "/" && path.pathname !== "/contact" && (
+              <Footer />
+            )}
           </AnimatePresence>
         </>
       )}
