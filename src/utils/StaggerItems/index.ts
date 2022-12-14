@@ -1,3 +1,6 @@
+// Se algum dia o stagger nao funcionar, olhar se ele nao esta chegando vazio e depois preenchendo
+// Se entre o elemento pai e filho houver alguma outra coisa, não irá funcionar
+
 const container = {
   show: {
     transition: {

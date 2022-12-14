@@ -21,6 +21,10 @@
     background: radial-gradient(#c5995d 2px, transparent 2px);
     background-size: 22px 22px;
   }
+  .outOfContainer {
+
+    margin: 0 calc(-50vw + 50%);
+  }
 }
 
 /* width */

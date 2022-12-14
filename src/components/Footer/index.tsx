@@ -1,16 +1,8 @@
-import { motion } from "framer-motion";
 import { BsGithub, BsInstagram } from "react-icons/bs";
 import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
-import { transition } from "../../utils/Transition";
 
 export const Footer = () => (
-  <motion.footer
-    initial={{ opacity: 0, y: 120 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: 120, transition: { delay: 1 } }}
-    transition={{ ...transition, delay: 2 }}
-    className="container fixed bottom-0 flex w-full items-center justify-center gap-8 divide-x divide-darkBrown bg-background/60 p-4 backdrop-blur-sm"
-  >
+  <footer className="mt-24 flex w-full items-center justify-center gap-8 divide-x divide-darkBrown bg-background/60 p-4 backdrop-blur-sm">
     <h1>&copy; NCLS 2023</h1>
 
     {/* Redes sociais */}
@@ -44,5 +36,5 @@ export const Footer = () => (
         <FaWhatsapp />
       </a>
     </div>
-  </motion.footer>
+  </footer>
 );

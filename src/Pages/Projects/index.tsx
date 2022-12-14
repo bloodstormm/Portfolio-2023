@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { ProjectCard } from "../../components/ProjectCard";
-import { projects } from "../../constants/Projects";
+import { useFetchProjects } from "../../hooks/useFetchProjects";
 import { container } from "../../utils/StaggerItems";
 import { transition } from "../../utils/Transition";
 
 export const Projects = () => {
+  const { projects, error, loading } = useFetchProjects();
+  console.log(loading);
+
   return (
     <>
       <motion.div
@@ -25,17 +28,21 @@ export const Projects = () => {
       >
         <h1 className="mb-9 font-Wulkan text-5xl">Últimos Projetos</h1>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          exit="exit"
-          className="grid grid-cols-2 gap-12"
-        >
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} position={index} />
-          ))}
-        </motion.div>
+        {loading ? (
+          <p className="w-full text-center text-2xl">Carregando...</p>
+        ) : (
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+            className="grid grid-cols-2 gap-12"
+          >
+            {projects?.map((project, index) => (
+              <ProjectCard key={index} project={project} position={index} />
+            ))}
+          </motion.div>
+        )}
       </motion.section>
     </>
   );

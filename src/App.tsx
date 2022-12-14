@@ -2,7 +2,7 @@ import { RoutesContainer } from "./components/RoutesContainer";
 import { BrowserRouter as Router } from "react-router-dom";
 function App() {
   return (
-    <div className="container mx-auto min-h-screen w-full">
+    <div className="mx-auto min-h-screen w-full">
       <Router>
         <RoutesContainer />
       </Router>

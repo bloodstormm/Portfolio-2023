@@ -10,16 +10,15 @@ type ProjectCardProps = {
 };
 
 export const ProjectCard = ({ project, position }: ProjectCardProps) => {
-  console.log(position + 1);
   return (
     <motion.div
       variants={itemAnimation}
-      className={` h-96 w-96 2xl:w-[32rem] ${
-        position % 2 == 1 && "my-16"
+      // Dando um padding top para os itens impares
+      className={`h-96 w-96 2xl:w-[32rem] ${
+        position % 2 == 1 && "my-20"
       } pb-6  `}
     >
-      {/* Dando um padding top para os itens impares */}
-      <Link to="">
+      <Link to={`/projects/${project.projectName}`}>
         <div className="rounded-2xl bg-[#fdf5eb] pb-8 ">
           <img
             src={project.image}
@@ -28,7 +27,7 @@ export const ProjectCard = ({ project, position }: ProjectCardProps) => {
           <div className="px-4 pt-1">
             <h1 className="pt-2 text-xl font-medium">{project.projectName}</h1>
             <h4 className="text-sm text-darkerAccent">
-              {project.stacks.join(" - ")}
+              Desenvolvido em: {project.developedIn}
             </h4>
 
             <p className="mt-4 line-clamp-3">{project.description}</p>

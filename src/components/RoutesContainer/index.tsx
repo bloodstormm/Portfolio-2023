@@ -8,6 +8,7 @@ import { Home, Contact, Projects, About, Career } from "../../Pages";
 import { Header } from "../Header";
 import { Footer } from "../Footer";
 import { LoaderLayer } from "../LoaderLayer";
+import { ProjectDetail } from "../../Pages/ProjectDetail";
 
 export const RoutesContainer = () => {
   const path = useLocation();
@@ -28,10 +29,11 @@ export const RoutesContainer = () => {
       <Header />
       {showContent && (
         <>
-          <AnimatePresence initial={true} mode="wait">
+          <AnimatePresence mode="wait">
             <Routes key={path.pathname} location={path}>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/:id" element={<ProjectDetail />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
               <Route path="/career" element={<Career />} />

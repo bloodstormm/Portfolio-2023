@@ -1,6 +1,6 @@
 export type ProjectType = {
-  image: string;
   projectName: string;
+  image: string;
   developedIn: string;
   stacks: string[];
   link: string;

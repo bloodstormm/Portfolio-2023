@@ -18,7 +18,7 @@ export const Home = () => {
         transition={{ ...transition, duration: 1 }}
         className="absolute left-0 z-30 h-screen w-full bg-[#e6c291]"
       ></motion.div>
-      <section className="relative z-20 w-full overflow-hidden">
+      <section className="container relative z-20 mx-auto mt-4 w-full overflow-hidden">
         <motion.div
           initial={{ y: 200, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

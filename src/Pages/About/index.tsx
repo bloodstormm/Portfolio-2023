@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
 import aboutPic from "../../assets/aboutPic.jpg";
-import {
-  HiOutlineComputerDesktop,
-  HiOutlineCodeBracket,
-  HiOutlineScale,
-} from "react-icons/hi2";
+import { HiOutlineCodeBracket, HiOutlineScale } from "react-icons/hi2";
+import { AiOutlineEye } from "react-icons/ai";
 import { transition } from "../../utils/Transition";
 import { container, itemAnimation } from "../../utils/StaggerItems";
 
@@ -35,7 +32,7 @@ export const About = () => {
         className="absolute left-0 z-20 h-screen w-full bg-[#e6c291]"
       ></motion.div>
 
-      <motion.section className="flex min-h-[70vh] w-full gap-12">
+      <motion.section className="container mx-auto flex min-h-[70vh] w-full gap-12">
         <motion.div
           variants={slideDown}
           initial="hidden"
@@ -92,13 +89,13 @@ export const About = () => {
               variants={itemAnimation}
               className="max-w-[17rem] rounded-xl bg-[#f2e9e1] p-6 hover:drop-shadow"
             >
-              <HiOutlineComputerDesktop className="mx-auto mb-2 text-4xl text-accent" />
+              <AiOutlineEye className="mx-auto mb-2 text-4xl text-accent" />
               <h3 className="text-center text-lg font-semibold ">
-                Lorem Ipsum
+                Visual & Design
               </h3>
               <p className="pt-4">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
-                provident nisi qui veritatis quo inventore voluptates?
+                Olho para o lado visual das coisas. Eu gosto de criar belas
+                ilustrações e animações!
               </p>
             </motion.div>
             <motion.div
