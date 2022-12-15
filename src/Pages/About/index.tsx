@@ -29,7 +29,7 @@ export const About = () => {
         }}
         exit={{ height: [0, window.innerHeight], top: [0, 0] }}
         transition={{ ...transition, duration: 1 }}
-        className="absolute left-0 z-20 h-screen w-full bg-[#e6c291]"
+        className="absolute left-0 z-20 h-screen w-full bg-accent"
       ></motion.div>
 
       <motion.section className="container mx-auto flex min-h-[70vh] w-full gap-12">
@@ -142,9 +142,9 @@ export const About = () => {
           </div>
         </motion.div>
 
-        <div className="dotsGrid absolute left-0 top-0 h-40 w-40"></div>
-        <div className="dotsGrid absolute bottom-0 h-16 w-64"></div>
-        <div className="dotsGrid absolute right-0 top-0 h-16 w-64"></div>
+        <div className="dotsGrid absolute left-0 top-0 z-20 h-40 w-40"></div>
+        <div className="dotsGrid absolute bottom-0 z-20 h-16 w-64"></div>
+        <div className="dotsGrid absolute right-0 top-0 z-20 h-16 w-64"></div>
       </motion.section>
     </>
   );

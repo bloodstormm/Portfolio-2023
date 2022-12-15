@@ -5,8 +5,15 @@ import { BsInstagram } from "react-icons/bs";
 import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { container, itemAnimation } from "../../utils/StaggerItems";
+import { animatedTitle, letterAnimation } from "../../utils/StaggerText";
 
 export const Contact = () => {
+  const text = "Quer me contratar ou me conhecer um pouco mais?";
+
+  const fragmentedTitle = text.split("");
+  const fragmentedWords = fragmentedTitle.map((word) => word.split(""));
+  console.log(fragmentedWords);
+
   return (
     <>
       <motion.div
@@ -17,7 +24,7 @@ export const Contact = () => {
         }}
         exit={{ height: window.innerHeight, top: [0, 0] }}
         transition={{ ...transition, duration: 1 }}
-        className="absolute left-0 z-30 h-screen w-full bg-[#e6c291]"
+        className="absolute left-0 z-30 h-screen w-full bg-accent"
       ></motion.div>
 
       <motion.section
@@ -26,15 +33,24 @@ export const Contact = () => {
         exit={{ visibility: "hidden", transition: { delay: 1 } }}
         className=" flex h-[80vh] w-full flex-col items-center justify-center "
       >
-        <div className="overflow-hidden text-center">
+        <div className="max-w-5xl overflow-hidden text-center">
           <motion.h1
-            initial={{ y: 300 }}
-            animate={{ y: 0 }}
-            exit={{ y: 400 }}
+            variants={animatedTitle}
+            initial="initial"
+            animate="animate"
+            exit="exit"
             transition={{ ...transition, duration: 1.6 }}
-            className="max-w-6xl font-Wulkan text-7xl"
+            className=" max-w-6xl font-Wulkan text-6xl"
           >
-            Quer me contratar ou me conhecer um pouco mais?
+            {fragmentedTitle?.map((letter, index) => (
+              <motion.div
+                key={index}
+                variants={letterAnimation}
+                style={{ display: "inline-block" }}
+              >
+                {letter === " " ? `\xa0` : letter}
+              </motion.div>
+            ))}
           </motion.h1>
 
           <motion.h3
@@ -58,7 +74,7 @@ export const Contact = () => {
           <motion.a
             variants={itemAnimation}
             href="https://api.whatsapp.com/send?phone=5512988770308"
-            className="hover:text-accent"
+            className="transition-colors duration-300 hover:text-accent"
             target="_blank"
           >
             <FaWhatsapp />
@@ -66,7 +82,7 @@ export const Contact = () => {
           <motion.a
             variants={itemAnimation}
             href="https://www.instagram.com/_nicolasantoss/"
-            className="hover:text-accent"
+            className="transition-colors duration-300 hover:text-accent"
             target="_blank"
           >
             <BsInstagram />
@@ -74,7 +90,7 @@ export const Contact = () => {
           <motion.a
             variants={itemAnimation}
             href="mailto:nicolasmalaquias2015@hotmail.com"
-            className="hover:text-accent"
+            className="transition-colors duration-300 hover:text-accent"
             target="_blank"
           >
             <HiOutlineMail />
@@ -83,7 +99,7 @@ export const Contact = () => {
           <motion.a
             variants={itemAnimation}
             href="https://www.linkedin.com/in/nicolas-malachias/"
-            className="hover:text-accent"
+            className="transition-colors duration-300 hover:text-accent"
             target="_blank"
           >
             <FaLinkedinIn />

@@ -13,8 +13,11 @@
 }
 
 @layer base {
+  html {
+    @apply scroll-smooth selection:bg-accent selection:text-darkBrown;
+  }
   body {
-    @apply bg-background text-darkBrown font-Poppins selection:bg-accent selection:text-darkBrown;
+    @apply bg-background text-darkBrown font-Poppins;
   }
 
   .dotsGrid {

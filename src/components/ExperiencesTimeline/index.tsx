@@ -1,14 +1,23 @@
+import { motion } from "framer-motion";
 import { experiences } from "../../constants/Experiences";
+import { container, itemAnimation } from "../../utils/StaggerItems";
 
 export const ExperiencesTimeline = () => {
   return (
     <div>
       <h2 className="mb-6 text-lg">Minhas Experiências: </h2>
       {/*Solucao encontrada no discord */}
-      <ul className=" [&>*:last-child_div:first-child]:before:w-0">
+      <motion.ul
+        variants={container}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+        className=" [&>*:last-child_div:first-child]:before:w-0"
+      >
         {experiences.map(
           ({ company, initialDate, finalDate, role, description, stack }) => (
-            <li
+            <motion.li
+              variants={itemAnimation}
               key={company}
               className="relative flex items-baseline gap-6  pb-5"
             >
@@ -47,10 +56,10 @@ export const ExperiencesTimeline = () => {
                   </div>
                 </div>
               </div>
-            </li>
+            </motion.li>
           )
         )}
-      </ul>
+      </motion.ul>
     </div>
   );
 };

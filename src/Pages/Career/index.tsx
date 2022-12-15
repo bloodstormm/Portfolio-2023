@@ -14,7 +14,7 @@ export const Career = () => {
         }}
         exit={{ height: window.innerHeight, top: [0, 0] }}
         transition={{ ...transition, duration: 1 }}
-        className="absolute left-0 z-30 h-screen w-full bg-[#e6c291]"
+        className="absolute left-0 z-30 h-screen w-full bg-accent"
       ></motion.div>
 
       <motion.section

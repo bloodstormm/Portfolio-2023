@@ -1,6 +1,8 @@
 import { education } from "../../constants/Education";
 import moment from "moment";
 import "moment/locale/pt-br";
+import { motion } from "framer-motion";
+import { container, itemAnimation } from "../../utils/StaggerItems";
 
 export const EducationTimeline = () => {
   const today = moment(moment().toISOString());
@@ -16,7 +18,13 @@ export const EducationTimeline = () => {
     <div className="pl-16">
       <h2 className="mb-6 text-lg">Meus Estudos: </h2>
       {/*Solucao encontrada no discord */}
-      <ul className=" [&>*:last-child_div:first-child]:before:w-0">
+      <motion.ul
+        variants={container}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+        className=" [&>*:last-child_div:first-child]:before:w-0"
+      >
         {education.map(
           ({
             institution,
@@ -26,7 +34,8 @@ export const EducationTimeline = () => {
             description,
             course,
           }) => (
-            <li
+            <motion.li
+              variants={itemAnimation}
               key={institution}
               className="relative flex items-baseline gap-6  pb-5"
             >
@@ -62,10 +71,10 @@ export const EducationTimeline = () => {
                     : "Não há descrição do estudo em questão."}
                 </p>
               </div>
-            </li>
+            </motion.li>
           )
         )}
-      </ul>
+      </motion.ul>
     </div>
   );
 };

@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useFetchProjects } from "../../hooks/useFetchProjects";
+import { animatedTitle, letterAnimation } from "../../utils/StaggerText";
 import { transition } from "../../utils/Transition";
+
+import { BsArrowReturnLeft } from "react-icons/bs";
 
 export const ProjectDetail = () => {
   const { id } = useParams();
@@ -17,27 +20,6 @@ export const ProjectDetail = () => {
 
   const fragmentedTitle = filteredProject?.projectName.split("");
 
-  const animatedTitle = {
-    animate: {
-      y: 0,
-      transition: {
-        delayChildren: 1.2,
-        staggerChildren: 0.04,
-        staggerDirection: 1,
-      },
-    },
-  };
-
-  const letterAnimation = {
-    initial: {
-      y: 400,
-    },
-    animate: {
-      y: 0,
-      transition: { ...transition, type: "spring", duration: 1.5 },
-    },
-  };
-
   return (
     <>
       <motion.div
@@ -47,8 +29,8 @@ export const ProjectDetail = () => {
           top: [0, window.innerHeight],
         }}
         exit={{ height: window.innerHeight, top: [0, 0] }}
-        transition={{ ...transition, duration: 1 }}
-        className="absolute left-0 z-30 h-screen w-full bg-[#e6c291]"
+        transition={{ ...transition, duration: 1.2 }}
+        className="absolute left-0 z-30 h-screen w-full bg-accent"
       ></motion.div>
 
       {loading ? (
@@ -56,7 +38,7 @@ export const ProjectDetail = () => {
       ) : (
         <motion.section className="mx-auto mb-16">
           {error && <p>{error}</p>}
-          <motion.div className="container mx-auto mb-14 overflow-hidden">
+          <motion.div className="container relative mx-auto mb-14 overflow-hidden">
             <motion.h4
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -80,7 +62,7 @@ export const ProjectDetail = () => {
                   variants={letterAnimation}
                   style={{ display: "inline-block" }}
                 >
-                  {letter}
+                  {letter === " " ? `\xa0` : letter}
                 </motion.div>
               ))}
             </motion.div>
@@ -89,7 +71,7 @@ export const ProjectDetail = () => {
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 100, opacity: 0 }}
-              transition={{ ...transition, delay: 1 }}
+              transition={{ ...transition, delay: 1.2 }}
             >
               <a
                 target="_blank"
@@ -98,6 +80,19 @@ export const ProjectDetail = () => {
               >
                 Ver Protótipo
               </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 100, opacity: 0 }}
+              transition={{ ...transition, delay: 1.2 }}
+              className="absolute top-6 right-6 rounded-xl bg-accent/30 p-3 transition-colors duration-300 hover:bg-accent/40"
+            >
+              <Link to="/projects" className="flex items-center gap-2">
+                <BsArrowReturnLeft />
+                <p>Voltar para Projetos</p>
+              </Link>
             </motion.div>
           </motion.div>
           <motion.div

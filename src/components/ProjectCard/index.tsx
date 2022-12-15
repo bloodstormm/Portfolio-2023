@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import React from "react";
 import { Link } from "react-router-dom";
 import { ProjectType } from "../../types/Projects";
 import { itemAnimation } from "../../utils/StaggerItems";
@@ -18,7 +17,10 @@ export const ProjectCard = ({ project, position }: ProjectCardProps) => {
         position % 2 == 1 && "my-20"
       } pb-6  `}
     >
-      <Link to={`/projects/${project.projectName}`}>
+      <Link
+        to={`/projects/${project.projectName}`}
+        onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
+      >
         <div className="rounded-2xl bg-[#fdf5eb] pb-8 ">
           <img
             src={project.image}

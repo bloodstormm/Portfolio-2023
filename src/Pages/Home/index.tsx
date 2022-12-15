@@ -4,6 +4,7 @@ import picture from "../../assets/pic.jpg";
 import { motion } from "framer-motion";
 import { jnj, opt, villarta } from "../../assets/companies";
 import { transition } from "../../utils/Transition";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
@@ -16,7 +17,7 @@ export const Home = () => {
         }}
         exit={{ height: window.innerHeight, top: [0, 0] }}
         transition={{ ...transition, duration: 1 }}
-        className="absolute left-0 z-30 h-screen w-full bg-[#e6c291]"
+        className="absolute left-0 z-30 h-screen w-full bg-accent"
       ></motion.div>
       <section className="container relative z-20 mx-auto mt-4 w-full overflow-hidden">
         <motion.div
@@ -76,11 +77,14 @@ export const Home = () => {
             <h1 className="font-Wulkan text-6xl uppercase">
               Nícolas Malachias
             </h1>
-            <div className="absolute -bottom-4 left-14 flex h-40 w-40 items-center justify-center rounded-full border border-[#3d3731] xl:bottom-0">
+            <Link
+              to="/projects"
+              className="absolute -bottom-4 left-14 flex h-40 w-40 items-center justify-center rounded-full border border-[#3d3731] xl:bottom-0"
+            >
               <div className="absolute top-1 right-5 h-6 w-6 rounded-full bg-accent"></div>
-              <p className="w-20">Entrar em contato</p>
+              <p className="w-20">Ver meus Projetos</p>
               <BsArrowUpRight className="h-5 w-5" />
-            </div>
+            </Link>
           </div>
         </motion.div>
         <motion.div
