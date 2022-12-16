@@ -16,6 +16,7 @@ export const Header = () => {
         <Link
           to="/"
           className="font-Odasans text-5xl font-semibold text-accent"
+          onClick={() => window.scrollTo(0, 0)}
         >
           NCLS
         </Link>

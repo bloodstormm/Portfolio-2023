@@ -1,51 +1,68 @@
+import { PostgrestError } from "@supabase/supabase-js";
 import axios from "axios";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useEffect } from "react";
+import supabase from "../api";
 import { ProjectType } from "../types/Projects";
 export const useFetchProjects = () => {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const [projects, setProjects] = useState<ProjectType[]>();
+  const [error, setError] = useState<PostgrestError>();
 
   const [cancelled, setCancelled] = useState(false);
 
+  // Função para pegar as imagens de acordo com o nome do projeto
+  // O nome do arquivo precisa ser o mesmo do titulo, e tudo em minusculo
+  const getImage = (projectName: string) => {
+    const { data } = supabase.storage
+      .from("portfolio-ncls-images")
+      .getPublicUrl(`ProjectImages/${projectName.toLowerCase()}/main`);
+
+    const imageUrl = data.publicUrl;
+
+    return imageUrl;
+  };
+
+  const getDetailImages = (projectName: string, detailImage: number) => {
+    const { data } = supabase.storage
+      .from("portfolio-ncls-images")
+      .getPublicUrl(
+        `ProjectImages/${projectName.toLowerCase()}/detail${detailImage}`
+      );
+
+    const imageUrl = data.publicUrl;
+
+    return imageUrl;
+  };
+
   useEffect(() => {
     const loadProject = async () => {
+      // memory leak
       if (cancelled) return;
 
       setLoading(true);
-      await axios
-        .get("http://localhost:3000/projects")
-        .then((resp) => {
-          setProjects(resp.data);
-          console.log(resp.data);
 
-          setLoading(false);
-        })
-        .catch((error) => {
-          setError(error.message);
-          setLoading(false);
-          console.log(error);
-        });
-      // const foundProject = projects.find(
-      //   (project) => project.projectName === projectName
-      // );
+      const { data, error } = await supabase
+        .from("projetos")
+        .select()
+        .order("created_at", { ascending: false });
 
-      // if (foundProject !== undefined) {
-      //   setLoading(false);
-      // } else {
-      //   setError("Projeto não encontrado!");
-      //   console.log(foundProject);
-      // }
+      // Criei essa constante para poder tipar o retorno do supabase
+      const response: ProjectType[] = data!;
+
+      setProjects(response);
+      setError(error!);
+
+      setLoading(false);
     };
 
     loadProject();
-  }, [projects, loading, error]);
+  }, [projects]);
 
   useEffect(() => {
     return () => setCancelled(true);
-  }, []);
+  }, [projects, error]);
 
-  return { projects, loading, error };
+  return { projects, loading, error, getImage, getDetailImages };
 };

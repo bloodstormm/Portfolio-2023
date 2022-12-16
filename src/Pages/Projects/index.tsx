@@ -3,24 +3,16 @@ import { ProjectCard } from "../../components/ProjectCard";
 import { useFetchProjects } from "../../hooks/useFetchProjects";
 import { container } from "../../utils/StaggerItems";
 import { transition } from "../../utils/Transition";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { PageTransition } from "../../components/PageTransition";
+import supabase from "../../api";
 
 export const Projects = () => {
   const { projects, error, loading } = useFetchProjects();
-  console.log(loading);
 
   return (
     <>
-      <motion.div
-        initial={{ height: window.innerHeight }}
-        animate={{
-          height: 0,
-          top: [0, window.innerHeight],
-        }}
-        exit={{ height: window.innerHeight, top: [0, 0] }}
-        transition={{ ...transition, duration: 1 }}
-        className="absolute left-0 z-30 h-screen w-full bg-accent"
-      ></motion.div>
+      <PageTransition />
       <motion.section
         initial={{ visibility: "hidden" }}
         animate={{ visibility: "visible" }}
@@ -36,7 +28,7 @@ export const Projects = () => {
             <h1 className="mb-6 font-Wulkan text-4xl">
               Ocorreu um erro, por favor tente mais tarde. =(
             </h1>
-            <p>Erro: {error}</p>
+            <p>Erro: {error.message}</p>
           </>
         ) : (
           <motion.div
@@ -44,7 +36,7 @@ export const Projects = () => {
             initial="hidden"
             animate="show"
             exit="exit"
-            className="grid grid-cols-2 gap-12"
+            className="grid gap-x-36 lg:grid-cols-2"
           >
             {projects?.map((project, index) => (
               <ProjectCard key={index} project={project} position={index} />

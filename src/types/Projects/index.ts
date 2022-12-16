@@ -1,9 +1,9 @@
 export type ProjectType = {
-  projectName: string;
-  image: string;
+  date: string | number | Date;
+  name: string;
   developedIn: string;
-  stacks: string[];
+  stacks: string;
   link: string;
   description: string;
-  category: string[];
+  category: string;
 };

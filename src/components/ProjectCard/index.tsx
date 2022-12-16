@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import supabase from "../../api";
+import { useFetchProjects } from "../../hooks/useFetchProjects";
 import { ProjectType } from "../../types/Projects";
 import { itemAnimation } from "../../utils/StaggerItems";
+import { transition } from "../../utils/Transition";
 
 type ProjectCardProps = {
   project: ProjectType;
@@ -9,32 +12,38 @@ type ProjectCardProps = {
 };
 
 export const ProjectCard = ({ project, position }: ProjectCardProps) => {
+  const { getImage } = useFetchProjects();
   return (
     <motion.div
       variants={itemAnimation}
       // Dando um padding top para os itens impares
       className={`h-96 w-96 2xl:w-[32rem] ${
-        position % 2 == 1 && "my-20"
+        position % 2 == 1 && "xl:my-20"
       } pb-6  `}
     >
       <Link
-        to={`/projects/${project.projectName}`}
+        to={`/projects/${project.name}`}
         onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
       >
-        <div className="rounded-2xl bg-[#fdf5eb] pb-8 ">
-          <img
-            src={project.image}
-            className="w-full rounded-t-2xl object-cover"
+        <motion.div
+          whileHover={{ scale: 1.03 }}
+          animate={{ scale: 1 }}
+          transition={{ ease: "easeInOut", duration: 0.3 }}
+          className="w-[32rem] rounded-2xl pb-8 "
+        >
+          <motion.img
+            src={getImage(project.name)}
+            className="h-72 w-full rounded-2xl object-cover shadow-2xl shadow-darkerAccent/30 drop-shadow-2xl"
           />
-          <div className="px-4 pt-1">
-            <h1 className="pt-2 text-xl font-medium">{project.projectName}</h1>
+          <div className="px-6  pt-3">
+            <h1 className="pt-2 text-xl font-medium">{project.name}</h1>
             <h4 className="text-sm text-darkerAccent">
               Desenvolvido em: {project.developedIn}
             </h4>
 
             <p className="mt-4 line-clamp-3">{project.description}</p>
           </div>
-        </div>
+        </motion.div>
       </Link>
     </motion.div>
   );

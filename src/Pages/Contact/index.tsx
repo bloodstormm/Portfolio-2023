@@ -6,6 +6,7 @@ import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { container, itemAnimation } from "../../utils/StaggerItems";
 import { animatedTitle, letterAnimation } from "../../utils/StaggerText";
+import { PageTransition } from "../../components/PageTransition";
 
 export const Contact = () => {
   const text = "Quer me contratar ou me conhecer um pouco mais?";
@@ -16,16 +17,7 @@ export const Contact = () => {
 
   return (
     <>
-      <motion.div
-        initial={{ height: window.innerHeight }}
-        animate={{
-          height: 0,
-          top: [0, window.innerHeight],
-        }}
-        exit={{ height: window.innerHeight, top: [0, 0] }}
-        transition={{ ...transition, duration: 1 }}
-        className="absolute left-0 z-30 h-screen w-full bg-accent"
-      ></motion.div>
+      <PageTransition />
 
       <motion.section
         initial={{ visibility: "hidden" }}

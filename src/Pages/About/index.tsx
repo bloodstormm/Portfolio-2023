@@ -4,6 +4,7 @@ import { HiOutlineCodeBracket, HiOutlineScale } from "react-icons/hi2";
 import { AiOutlineEye } from "react-icons/ai";
 import { transition } from "../../utils/Transition";
 import { container, itemAnimation } from "../../utils/StaggerItems";
+import { PageTransition } from "../../components/PageTransition";
 
 export const About = () => {
   const slideDown = {
@@ -21,16 +22,7 @@ export const About = () => {
 
   return (
     <>
-      <motion.div
-        initial={{ height: window.innerHeight }}
-        animate={{
-          height: [window.innerHeight, 0],
-          top: [0, window.innerHeight],
-        }}
-        exit={{ height: [0, window.innerHeight], top: [0, 0] }}
-        transition={{ ...transition, duration: 1 }}
-        className="absolute left-0 z-20 h-screen w-full bg-accent"
-      ></motion.div>
+      <PageTransition />
 
       <motion.section className="container mx-auto flex min-h-[70vh] w-full gap-12">
         <motion.div
@@ -74,25 +66,21 @@ export const About = () => {
           >
             <motion.div
               variants={itemAnimation}
-              className="max-w-[17rem] rounded-xl bg-[#f2e9e1] p-6 hover:drop-shadow"
+              className="max-w-[17rem] rounded-xl bg-[#f2e9e1] p-6 text-center hover:drop-shadow"
             >
               <HiOutlineCodeBracket className="mx-auto mb-2 text-4xl text-accent" />
-              <h3 className="text-center text-lg font-semibold ">
-                Lorem Ipsum
-              </h3>
+              <h3 className="text-lg font-semibold ">Front-end</h3>
               <p className="pt-4">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
-                provident nisi qui veritatis quo inventore voluptates?
+                Atualmente a linguagem que mais uso é Typescript, usando em
+                conjunto com React e TailwindCSS
               </p>
             </motion.div>
             <motion.div
               variants={itemAnimation}
-              className="max-w-[17rem] rounded-xl bg-[#f2e9e1] p-6 hover:drop-shadow"
+              className="max-w-[17rem] rounded-xl bg-[#f2e9e1] p-6 text-center hover:drop-shadow"
             >
               <AiOutlineEye className="mx-auto mb-2 text-4xl text-accent" />
-              <h3 className="text-center text-lg font-semibold ">
-                Visual & Design
-              </h3>
+              <h3 className="text-lg font-semibold ">Visual & Design</h3>
               <p className="pt-4">
                 Olho para o lado visual das coisas. Eu gosto de criar belas
                 ilustrações e animações!
@@ -100,15 +88,13 @@ export const About = () => {
             </motion.div>
             <motion.div
               variants={itemAnimation}
-              className="max-w-[17rem] rounded-xl bg-[#f2e9e1] p-6 hover:drop-shadow"
+              className="max-w-[17rem] rounded-xl bg-[#f2e9e1] p-6 text-center hover:drop-shadow"
             >
               <HiOutlineScale className="mx-auto mb-2 text-4xl text-accent" />
-              <h3 className="text-center text-lg font-semibold ">
-                Lorem Ipsum
-              </h3>
+              <h3 className="text-lg font-semibold ">Princípios</h3>
               <p className="pt-4">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
-                provident nisi qui veritatis quo inventore voluptates?
+                Sou uma pessoa de valores e prezo por tudo que faço e para quem
+                eu faço
               </p>
             </motion.div>
           </motion.div>
