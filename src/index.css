@@ -25,8 +25,11 @@
     background-size: 22px 22px;
   }
   .outOfContainer {
-
     margin: 0 calc(-50vw + 50%);
+  }
+  .bottomLine {
+    @apply relative inline-block text-lg after:block after:h-[2px] after:w-0 after:bg-accent
+    after:transition-all after:duration-300 after:content-[''] hover:after:w-full
   }
 }
 

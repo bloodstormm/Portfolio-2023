@@ -1,6 +1,5 @@
 import { PostgrestError } from "@supabase/supabase-js";
-import axios from "axios";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import supabase from "../api";
 import { ProjectType } from "../types/Projects";

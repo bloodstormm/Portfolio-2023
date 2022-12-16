@@ -1,11 +1,15 @@
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+import { transition } from "../../utils/Transition";
+
+import { PageTransition } from "../../components/PageTransition";
+
+import picture from "../../assets/pic.jpg";
+import { jnj, opt, villarta } from "../../assets/companies";
+
 import { BsInstagram, BsArrowUpRight, BsGithub } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
-import picture from "../../assets/pic.jpg";
-import { motion } from "framer-motion";
-import { jnj, opt, villarta } from "../../assets/companies";
-import { transition } from "../../utils/Transition";
-import { Link } from "react-router-dom";
-import { PageTransition } from "../../components/PageTransition";
 
 export const Home = () => {
   return (

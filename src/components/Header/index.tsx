@@ -22,16 +22,32 @@ export const Header = () => {
         </Link>
 
         <div className="flex gap-16 font-medium">
-          <Link to="about" onClick={() => window.scrollTo(0, 0)}>
+          <Link
+            to="about"
+            className="bottomLine"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             Sobre Mim
           </Link>
-          <Link to="projects" onClick={() => window.scrollTo(0, 0)}>
+          <Link
+            to="projects"
+            className="bottomLine"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             Projetos
           </Link>
-          <Link to="career" onClick={() => window.scrollTo(0, 0)}>
+          <Link
+            to="career"
+            className="bottomLine"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             Carreira
           </Link>
-          <Link to="contact" onClick={() => window.scrollTo(0, 0)}>
+          <Link
+            to="contact"
+            className="bottomLine"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             Contato
           </Link>
         </div>
