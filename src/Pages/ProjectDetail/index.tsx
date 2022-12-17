@@ -74,8 +74,7 @@ export const ProjectDetail = () => {
                   <a
                     target="_blank"
                     href={filteredProject?.link}
-                    className="relative inline-block text-lg after:block after:h-[2px] after:w-0 after:bg-accent
-                after:transition-all after:duration-300 after:content-[''] hover:after:w-full"
+                    className="bottomLine text-lg"
                   >
                     <div className="flex items-center gap-1">
                       <FiArrowUpRight />
