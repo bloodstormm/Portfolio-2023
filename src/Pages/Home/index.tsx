@@ -91,12 +91,12 @@ export const Home = () => {
           transition={{ ...transition, duration: 1.25 }}
           className="flex w-full justify-center gap-6 py-12 sm:gap-20 sm:p-6"
         >
-          <img src={jnj} alt="jnj" className="h-12 grayscale lg:h-16" />
-          <img src={opt} alt="opt" className="h-12 grayscale lg:h-16" />
+          <img src={jnj} alt="jnj" className="h-8 grayscale sm:h-12 lg:h-16" />
+          <img src={opt} alt="opt" className="h-8 grayscale sm:h-12 lg:h-16" />
           <img
             src={villarta}
             alt="villarta"
-            className="h-12 grayscale lg:h-16"
+            className="h-8 grayscale sm:h-12 lg:h-16"
           />
         </motion.div>
       </section>

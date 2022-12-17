@@ -23,7 +23,7 @@ export const Contact = () => {
         initial={{ visibility: "hidden" }}
         animate={{ visibility: "visible" }}
         exit={{ visibility: "hidden", transition: { delay: 1 } }}
-        className=" flex h-[80vh] w-full flex-col items-center justify-center "
+        className="flex h-[80vh] w-full flex-col items-center justify-center p-4 sm:h-[90vh] sm:p-6 "
       >
         <div className="max-w-5xl overflow-hidden text-center">
           <motion.h1
@@ -32,7 +32,7 @@ export const Contact = () => {
             animate="animate"
             exit="exit"
             transition={{ ...transition, duration: 1.6 }}
-            className=" max-w-6xl font-Wulkan text-6xl"
+            className=" max-w-6xl font-Wulkan text-5xl lg:text-6xl"
           >
             {fragmentedTitle?.map((letter, index) => (
               <motion.div

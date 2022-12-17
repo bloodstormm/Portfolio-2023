@@ -39,7 +39,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
                 as={motion.div}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
-                exit={{ scale: 0 }}
+                exit={{ scale: 0, opacity: 0 }}
                 transition={transition}
                 className="relative mx-auto flex h-[32rem] w-[90%] flex-col items-center overflow-hidden rounded-2xl bg-white p-4"
               >
