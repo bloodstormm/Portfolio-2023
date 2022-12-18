@@ -16,7 +16,7 @@ export const EducationTimeline = () => {
 
   return (
     <div className="lg:pl-16">
-      <h2 className="mb-6 text-lg">Meus Estudos: </h2>
+      <h2 className="mb-6 px-6 text-lg lg:px-0">Meus Estudos: </h2>
       {/*Solucao encontrada no discord */}
       <motion.ul
         variants={container}
@@ -54,11 +54,11 @@ export const EducationTimeline = () => {
 
                 {/* Se o curso ja estiver concluido, adicionar um concluido */}
                 {today.isAfter(formatDate(finalDate)) ? (
-                  <p className="absolute top-2 right-10 rounded-xl bg-accent/60 py-1 px-3 text-xs lg:right-2">
+                  <p className="absolute top-2 right-12 rounded-xl bg-accent/60 py-1 px-3 text-xs lg:right-2">
                     Concluído!
                   </p>
                 ) : (
-                  <p className="absolute top-2 right-10 rounded-xl bg-accent/60 py-1 px-3 text-xs lg:right-2">
+                  <p className="absolute top-2 right-12 rounded-xl bg-accent/60 py-1 px-3 text-xs lg:right-2">
                     {degree}
                   </p>
                 )}

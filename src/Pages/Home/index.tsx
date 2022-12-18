@@ -29,9 +29,9 @@ export const Home = () => {
             </h1>
 
             <p className="text-sm lg:text-base">
-              Olá, me chamo Nícolas, seja bem-vindo(a) ao meu Portfólio de 2023.
-              Logo abaixo você encontra algumas das minhas redes, sinta se a
-              vontade de entrar em contato! 😅
+              Olá, eu me chamo Nícolas, seja bem-vindo(a) ao meu Portfólio de
+              2023. Logo abaixo você encontra algumas das minhas redes, sinta-se
+              a vontade de entrar em contato! 😅
             </p>
             {/* Redes sociais */}
             <div className="flex justify-center gap-10 pb-4 text-3xl sm:justify-start sm:pt-6">

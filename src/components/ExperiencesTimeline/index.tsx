@@ -5,7 +5,7 @@ import { container, itemAnimation } from "../../utils/StaggerItems";
 export const ExperiencesTimeline = () => {
   return (
     <div>
-      <h2 className="mb-6 text-lg">Minhas Experiências: </h2>
+      <h2 className="mb-6 px-6 text-lg lg:px-0">Minhas Experiências: </h2>
       {/*Solucao encontrada no discord */}
       <motion.ul
         variants={container}

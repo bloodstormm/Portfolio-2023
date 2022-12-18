@@ -36,11 +36,11 @@ export const About = () => {
             Sobre Mim
           </h1>
 
-          <p className="max-w-sm py-8 text-sm sm:max-w-2xl">
-            Olá, me chamo Nícolas Malachias. Tenho 18 anos e atualmente sou
+          <p className="max-w-sm py-8 text-sm sm:max-w-2xl sm:text-base">
+            Olá, eu me chamo Nícolas Malachias. Tenho 18 anos e atualmente sou
             estudante de Análise e Desenvolvimento de Sistemas na UNITAU. Estou
-            estagiando na Jhonson & Jhonson na área de TI. Amo música e curto
-            muito tocar violão, guitarra além de praticar ciclismo e jogar
+            estagiando na Johnson & Johnson na área de TI. Amo música e curto
+            muito tocar violão e guitarra, além de praticar ciclismo e jogar
             basquete algumas vezes.
           </p>
 

@@ -22,6 +22,6 @@ export const education: EducationType[] = [
     finalDate: "06/2021",
     degree: "Curso Técnico",
     description:
-      "O curso abordava desde de infraestrutura, como cabeamentos e rede, até desenvolvimento de softwares usando linguagens de programação",
+      "O curso abordava desde infraestrutura, como cabeamentos e rede, até desenvolvimento de softwares usando linguagens de programação",
   },
 ];
