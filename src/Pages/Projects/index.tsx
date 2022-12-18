@@ -19,7 +19,9 @@ export const Projects = () => {
         exit={{ visibility: "hidden", transition: { delay: 1 } }}
         className="flex w-full flex-col items-center"
       >
-        <h1 className="mb-9 font-Wulkan text-5xl">Últimos Projetos</h1>
+        <h1 className="mb-9 font-Wulkan text-4xl sm:text-5xl">
+          Últimos Projetos
+        </h1>
 
         {loading ? (
           <p className="w-full text-center text-2xl">Carregando...</p>
@@ -36,7 +38,7 @@ export const Projects = () => {
             initial="hidden"
             animate="show"
             exit="exit"
-            className="grid gap-x-36 lg:grid-cols-2"
+            className="grid gap-x-28 lg:grid-cols-2 xl:gap-x-36"
           >
             {projects?.map((project, index) => (
               <ProjectCard key={index} project={project} position={index} />

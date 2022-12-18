@@ -18,7 +18,7 @@ export const ProjectCard = ({ project, position }: ProjectCardProps) => {
       variants={itemAnimation}
       // Dando um padding top para os itens impares
       className={`h-96 w-96 2xl:w-[32rem] ${
-        position % 2 == 1 && "xl:my-20"
+        position % 2 == 1 && "lg:my-20"
       } pb-6  `}
     >
       <Link
@@ -29,11 +29,11 @@ export const ProjectCard = ({ project, position }: ProjectCardProps) => {
           whileHover={{ scale: 1.03 }}
           animate={{ scale: 1 }}
           transition={{ ease: "easeInOut", duration: 0.3 }}
-          className="w-[32rem] rounded-2xl pb-8 "
+          className="mx-auto w-80 rounded-2xl pb-8 lg:w-[28rem] xl:w-[32rem] "
         >
           <motion.img
             src={getImage(project.name)}
-            className="h-72 w-full rounded-2xl object-cover shadow-2xl shadow-darkerAccent/30 drop-shadow-2xl"
+            className="h-48 w-full rounded-2xl object-cover shadow-2xl shadow-darkerAccent/30 drop-shadow-2xl sm:h-72"
           />
           <div className="px-6  pt-3">
             <h1 className="pt-2 text-xl font-medium">{project.name}</h1>

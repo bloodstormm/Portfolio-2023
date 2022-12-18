@@ -36,7 +36,7 @@ export const ProjectDetail = () => {
             <p className="w-full text-center text-2xl">Carregando...</p>
           ) : (
             <motion.section className="mx-auto mb-16">
-              <motion.div className="container relative mx-auto mb-14 overflow-hidden">
+              <motion.div className="container relative mx-auto overflow-hidden p-6 sm:mb-14">
                 <motion.h4
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -52,7 +52,7 @@ export const ProjectDetail = () => {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  className="my-8 font-Wulkan text-8xl uppercase"
+                  className="my-8 font-Wulkan text-6xl uppercase lg:text-8xl"
                 >
                   {fragmentedTitle?.map((letter, index) => (
                     <motion.div
@@ -88,7 +88,7 @@ export const ProjectDetail = () => {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: 100, opacity: 0 }}
                   transition={{ ...transition, delay: 1.2 }}
-                  className="absolute top-6 right-6 rounded-xl bg-accent/30 p-3 transition-colors duration-300 hover:bg-accent/40"
+                  className="absolute top-6 right-6 hidden rounded-xl bg-accent/30 p-3 transition-colors duration-300 hover:bg-accent/40 lg:block"
                 >
                   <Link to="/projects" className="flex items-center gap-2">
                     <BsArrowReturnLeft />
@@ -120,24 +120,24 @@ export const ProjectDetail = () => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 100, opacity: 0 }}
                 transition={{ ...transition, delay: 1 }}
-                className="container mx-auto mt-12 space-y-16"
+                className="container mx-auto mt-6 space-y-12 p-6 sm:mt-12 sm:space-y-16"
               >
-                <div className="mx-auto grid max-w-6xl grid-cols-4 justify-center">
-                  <h2 className="text-lg font-medium text-darkerAccent">
+                <div className="mx-auto grid max-w-6xl justify-center lg:grid-cols-4">
+                  <h2 className="mb-4 text-xl font-medium text-darkerAccent lg:mb-0 lg:text-lg">
                     Descrição
                   </h2>
 
-                  <p className="col-span-3 max-w-2xl text-lg">
+                  <p className="col-span-3 max-w-2xl text-base lg:text-lg">
                     {filteredProject?.description}
                   </p>
                 </div>
 
-                <div className="mx-auto grid max-w-6xl grid-cols-4 justify-center">
-                  <h2 className="text-lg font-medium text-darkerAccent">
+                <div className="mx-auto grid max-w-6xl justify-center lg:grid-cols-4">
+                  <h2 className="mb-4 text-xl font-medium text-darkerAccent lg:mb-0 lg:text-lg">
                     Informações
                   </h2>
 
-                  <div className="col-span-3 max-w-3xl space-y-2 text-lg ">
+                  <div className="col-span-3 max-w-3xl space-y-2  text-base lg:text-lg">
                     <p>
                       Projeto feito em:
                       <span className="ml-1 font-medium text-accent">
@@ -156,7 +156,7 @@ export const ProjectDetail = () => {
                 <h2 className="text-center text-3xl font-medium text-darkerAccent">
                   Imagens do projeto:
                 </h2>
-                <div className="mx-auto w-3/4 space-y-8">
+                <div className="mx-auto w-full space-y-8 lg:w-3/4">
                   <img
                     src={getDetailImages(filteredProject!.name, 1)}
                     className="w-full rounded-3xl"

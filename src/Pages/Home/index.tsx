@@ -106,7 +106,7 @@ export const Home = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 0.8 } }}
         exit={{ opacity: 0, transition: { duration: 0.8 } }}
-        className="absolute bottom-5  left-20 h-96 w-72 rounded-full bg-gradient-to-br from-accent to-transparent p-px  sm:bottom-0 sm:rounded-t-full "
+        className="absolute bottom-5 left-20 h-96 w-72 rounded-full bg-gradient-to-br from-accent to-transparent p-px sm:bottom-0 sm:rounded-t-full"
       >
         <div className="h-full w-full rounded-t-full bg-background"></div>
       </motion.div>

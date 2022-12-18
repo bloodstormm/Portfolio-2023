@@ -15,7 +15,7 @@ export const EducationTimeline = () => {
   };
 
   return (
-    <div className="pl-16">
+    <div className="lg:pl-16">
       <h2 className="mb-6 text-lg">Meus Estudos: </h2>
       {/*Solucao encontrada no discord */}
       <motion.ul
@@ -37,16 +37,16 @@ export const EducationTimeline = () => {
             <motion.li
               variants={itemAnimation}
               key={institution}
-              className="relative flex items-baseline gap-6  pb-5"
+              className="relative mx-auto flex items-baseline gap-6 pl-4 pb-5 sm:max-w-none"
             >
               <div
-                className="right-0 h-3 w-3 rounded-full bg-[#785d38] before:absolute
-               before:left-[5.5px] before:h-full before:w-[1px] before:bg-[#785d38]"
+                className="right-0 h-3 w-3 rounded-full bg-[#785d38] before:absolute before:left-[22px] before:h-full
+                before:w-[1px] before:bg-[#785d38]"
               ></div>
 
               <div
-                className="flex w-[29rem] flex-col justify-center
-               rounded-xl bg-accent/20 p-4 text-base transition duration-300 hover:brightness-110"
+                className="flex w-4/5 flex-col justify-center rounded-xl
+               bg-accent/20 p-4 text-base transition duration-300 hover:brightness-110 sm:w-[29rem]"
               >
                 <p className="mb-1 text-xs text-accent">
                   {initialDate} - {finalDate}
@@ -54,11 +54,11 @@ export const EducationTimeline = () => {
 
                 {/* Se o curso ja estiver concluido, adicionar um concluido */}
                 {today.isAfter(formatDate(finalDate)) ? (
-                  <p className="absolute top-2 right-2 rounded-xl bg-accent/60 py-1 px-3 text-xs">
+                  <p className="absolute top-2 right-10 rounded-xl bg-accent/60 py-1 px-3 text-xs lg:right-2">
                     Concluído!
                   </p>
                 ) : (
-                  <p className="absolute top-2 right-2 rounded-xl bg-accent/60 py-1 px-3 text-xs">
+                  <p className="absolute top-2 right-10 rounded-xl bg-accent/60 py-1 px-3 text-xs lg:right-2">
                     {degree}
                   </p>
                 )}

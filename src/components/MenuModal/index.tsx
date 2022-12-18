@@ -47,7 +47,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
                   as={motion.h1}
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ ...transition, delay: 0.4 }}
+                  transition={{ ...transition, delay: 0.5 }}
                   className="font-Odasans text-5xl font-semibold text-accent"
                 >
                   NCLS
@@ -66,7 +66,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
                   >
                     <Link
                       to="/"
-                      className="bottomLine"
+                      className="bottomLine w-full"
                       onClick={() => setIsOpen(false)}
                     >
                       Home
@@ -78,7 +78,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
                   >
                     <Link
                       to="about"
-                      className="bottomLine"
+                      className="bottomLine w-full"
                       onClick={() => setIsOpen(false)}
                     >
                       Sobre Mim
@@ -90,7 +90,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
                   >
                     <Link
                       to="projects"
-                      className="bottomLine"
+                      className="bottomLine w-full"
                       onClick={() => setIsOpen(false)}
                     >
                       Projetos
@@ -102,7 +102,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
                   >
                     <Link
                       to="career"
-                      className="bottomLine"
+                      className="bottomLine w-full"
                       onClick={() => setIsOpen(false)}
                     >
                       Carreira
@@ -114,25 +114,20 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
                   >
                     <Link
                       to="contact"
-                      className="bottomLine"
+                      className="bottomLine w-full"
                       onClick={() => setIsOpen(false)}
                     >
                       Contato
                     </Link>
                   </motion.div>
+                  <motion.button
+                    variants={itemAnimation}
+                    className="mt-8 flex items-center gap-3 rounded-xl bg-accent py-4 px-6 text-white"
+                  >
+                    Baixar Currículo
+                    <BsDownload />
+                  </motion.button>
                 </motion.div>
-
-                <motion.button
-                  initial={{ y: 150, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ ...transition, delay: 1.4 }}
-                  className="mt-8 flex items-center gap-3 rounded-xl bg-accent py-4 px-6 text-white"
-                >
-                  Baixar Currículo
-                  <BsDownload />
-                </motion.button>
-
-                {/* ... */}
               </Dialog.Panel>
             </div>
           </div>
