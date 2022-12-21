@@ -1,29 +1,25 @@
-import { education } from "../../constants/Education";
 import moment from "moment";
-import "moment/locale/pt-br";
+
 import { motion } from "framer-motion";
+
+import { education } from "../../constants/Education";
+
 import { container, itemAnimation } from "../../utils/StaggerItems";
+import { formattedDate } from "../../utils/FormattedDate";
 
 export const EducationTimeline = () => {
   const today = moment(moment().toISOString());
 
-  // Transformando a data em formato americano para poder fazer a condicional de Concluido ou não
-  const formatDate = (date: String) => {
-    let dateFinal = date.split("/").reverse().join("/");
-
-    return dateFinal;
-  };
-
   return (
     <div className="lg:pl-16">
-      <h2 className="mb-6 px-6 text-lg lg:px-0">Meus Estudos: </h2>
-      {/*Solucao encontrada no discord */}
+      <h2 className="mb-6 px-6 text-lg lg:px-0">Meus Estudos:</h2>
       <motion.ul
         variants={container}
         initial="hidden"
         animate="show"
         exit="exit"
-        className=" [&>*:last-child_div:first-child]:before:w-0"
+        // Solucao encontrada no discord 👇🏽
+        className="[&>*:last-child_div:first-child]:before:w-0"
       >
         {education.map(
           ({
@@ -42,18 +38,18 @@ export const EducationTimeline = () => {
               <div
                 className="right-0 h-3 w-3 rounded-full bg-[#785d38] before:absolute before:left-[22px] before:h-full
                 before:w-[1px] before:bg-[#785d38]"
-              ></div>
+              />
 
               <div
-                className="flex w-4/5 flex-col justify-center rounded-xl
-               bg-accent/20 p-4 text-base transition duration-300 hover:brightness-110 sm:w-[29rem]"
+                className="flex w-4/5 flex-col justify-center rounded-xl bg-accent/20 
+                p-4 text-base transition duration-300 hover:brightness-110 sm:w-[29rem]"
               >
                 <p className="mb-1 text-xs text-accent">
                   {initialDate} - {finalDate}
                 </p>
 
                 {/* Se o curso ja estiver concluido, adicionar um concluido */}
-                {today.isAfter(formatDate(finalDate)) ? (
+                {today.isAfter(formattedDate(finalDate)) ? (
                   <p className="absolute top-2 right-12 rounded-xl bg-accent/60 py-1 px-3 text-xs lg:right-2">
                     Concluído!
                   </p>

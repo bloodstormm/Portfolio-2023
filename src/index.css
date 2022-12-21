@@ -14,7 +14,7 @@
 
 @layer base {
   html {
-    @apply scroll-smooth selection:bg-accent selection:text-darkBrown;
+    @apply  selection:bg-accent selection:text-darkBrown;
   }
   body {
     @apply bg-background text-darkBrown font-Poppins;

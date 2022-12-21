@@ -5,16 +5,22 @@ import { AnimatePresence } from "framer-motion";
 
 import { Header } from "../Header";
 import { Footer } from "../Footer";
-import { ProjectDetail } from "../../Pages/ProjectDetail";
-import { Home, Contact, Projects, About, Career } from "../../Pages";
+import {
+  Home,
+  Contact,
+  Projects,
+  About,
+  Career,
+  ProjectDetail,
+} from "../../Pages";
 
 export const RoutesContainer = () => {
   const path = useLocation();
 
   useEffect(() => {
-    // 👇️ scroll to top on page load
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, []);
+    // 👇️ scroll to top on every page load
+    window.scrollTo(0, 0);
+  }, [path.pathname]);
 
   return (
     <>

@@ -1,21 +1,34 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+import { motion, useScroll } from "framer-motion";
+
+import { fadeInDown } from "../../utils/Animations";
+import { MenuModal } from "../MenuModal";
+
 import { BsDownload } from "react-icons/bs";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
-import { motion } from "framer-motion";
-import { transition } from "../../utils/Transition";
-import { useState } from "react";
-import { MenuModal } from "../MenuModal";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const { scrollY } = useScroll();
+
+  // UseEffect feito para ativar as estilizações do header quando scrollar
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      latest > 30 ? setScrolled(true) : setScrolled(false);
+    });
+  }, [scrolled]);
 
   return (
     <motion.div
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      exit={{ y: 120, opacity: 0 }}
-      transition={{ ...transition, duration: 1, delay: 1.1 }}
-      className="sticky top-0 z-30 flex bg-background/40 py-6 backdrop-blur-md"
+      {...fadeInDown}
+      transition={{ ...fadeInDown.transition, delay: 1.1 }}
+      className={`${
+        scrolled && "bg-darkBrown/10 text-whity shadow-sm backdrop-blur-lg"
+      } sticky top-0 z-30 flex  py-6 transition-colors duration-150`}
     >
       <div className="container mx-auto flex items-center justify-between px-10 xl:px-0 ">
         <Link
@@ -25,6 +38,8 @@ export const Header = () => {
         >
           NCLS
         </Link>
+
+        {/* Botao Menu p Mobile  */}
         <button onClick={() => setIsOpen(true)} className="block lg:hidden">
           <HiOutlineMenuAlt4 className="text-2xl" />
         </button>
@@ -66,6 +81,7 @@ export const Header = () => {
         </button>
       </div>
 
+      {/* Menu p Mobile */}
       <MenuModal isOpen={isOpen} setIsOpen={setIsOpen} />
     </motion.div>
   );

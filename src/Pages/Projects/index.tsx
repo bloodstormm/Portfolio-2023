@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { ProjectCard } from "../../components/ProjectCard";
-import { useFetchProjects } from "../../hooks/useFetchProjects";
+
 import { container } from "../../utils/StaggerItems";
-import { transition } from "../../utils/Transition";
-import { useEffect, useState } from "react";
+import { useFetchProjects } from "../../hooks/useFetchProjects";
+
 import { PageTransition } from "../../components/PageTransition";
-import supabase from "../../api";
+import { ProjectCard } from "../../components/ProjectCard";
 
 export const Projects = () => {
   const { projects, error, loading } = useFetchProjects();

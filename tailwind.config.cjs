@@ -13,6 +13,7 @@ module.exports = {
         accent: "#c5995d",
         darkerAccent: "#9a7a4d",
         darkBrown: "#3d3731",
+        whity: "#fff7ec",
       },
     },
   },

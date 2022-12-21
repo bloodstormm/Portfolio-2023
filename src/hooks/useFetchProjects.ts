@@ -57,7 +57,16 @@ export const useFetchProjects = () => {
     };
 
     loadProject();
-  }, [projects]);
+  }, [projects, error]);
+
+  // Setando todas as imagens do projeto de acordo com o nome do mesmo
+  projects?.map(
+    (project) => (
+      (project.image = getImage(project.name)),
+      (project.imageDetail1 = getDetailImages(project.name, 1)),
+      (project.imageDetail2 = getDetailImages(project.name, 2))
+    )
+  );
 
   useEffect(() => {
     return () => setCancelled(true);

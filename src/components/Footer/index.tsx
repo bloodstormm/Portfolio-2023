@@ -2,7 +2,7 @@ import { BsGithub, BsInstagram } from "react-icons/bs";
 import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 
 export const Footer = () => (
-  <footer className="mt-24 flex w-full items-center justify-center gap-8 divide-x divide-darkBrown bg-background/60 p-4 backdrop-blur-sm">
+  <footer className="mt-24 flex w-full items-center justify-center gap-8 divide-x divide-darkBrown bg-background/60 p-4">
     <h1>&copy; NCLS 2023</h1>
 
     {/* Redes sociais */}

@@ -1,25 +1,22 @@
-import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
+import { motion } from "framer-motion";
+
 import { useFetchProjects } from "../../hooks/useFetchProjects";
+
 import { animatedTitle, letterAnimation } from "../../utils/StaggerText";
 import { transition } from "../../utils/Transition";
 
+import { PageTransition } from "../../components/PageTransition";
+
 import { BsArrowReturnLeft } from "react-icons/bs";
 import { FiArrowUpRight } from "react-icons/fi";
-
-import { PageTransition } from "../../components/PageTransition";
+import { useEffect } from "react";
 
 export const ProjectDetail = () => {
   const { id } = useParams();
-
   const transitionImage = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.91] };
 
-  const { projects, loading, error, getImage, getDetailImages } =
-    useFetchProjects();
-
-  console.log(loading);
-
-  console.log(projects);
+  const { projects, loading, error } = useFetchProjects();
 
   const filteredProject = projects?.find((project) => project.name === id);
 
@@ -110,7 +107,7 @@ export const ProjectDetail = () => {
                   initial={{ borderRadius: "20px" }}
                   animate={{ borderRadius: "0px" }}
                   transition={{ delay: 1, ...transitionImage }}
-                  src={getImage(filteredProject!.name)}
+                  src={filteredProject?.image}
                   alt=""
                   className="absolute bottom-0 h-[36rem] w-full object-cover object-center"
                 />
@@ -158,11 +155,11 @@ export const ProjectDetail = () => {
                 </h2>
                 <div className="mx-auto w-full space-y-8 lg:w-3/4">
                   <img
-                    src={getDetailImages(filteredProject!.name, 1)}
+                    src={filteredProject?.imageDetail1}
                     className="w-full rounded-3xl"
                   />
                   <img
-                    src={getDetailImages(filteredProject!.name, 2)}
+                    src={filteredProject?.imageDetail2}
                     className="w-full rounded-3xl"
                   />
                 </div>
