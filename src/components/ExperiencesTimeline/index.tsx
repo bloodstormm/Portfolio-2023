@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 
 import { experiences } from "../../constants/Experiences";
-import { container, itemAnimation } from "../../utils/StaggerItems";
+import { StaggerContainer, itemAnimation } from "../../utils/Animations";
 
 export const ExperiencesTimeline = () => (
   <div>
     <h2 className="mb-6 px-6 text-lg lg:px-0">Minhas Experiências: </h2>
     {/*Solucao encontrada no discord */}
     <motion.ul
-      variants={container}
+      variants={StaggerContainer}
       initial="hidden"
       animate="show"
       exit="exit"

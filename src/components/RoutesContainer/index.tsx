@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, useScroll } from "framer-motion";
 
 import { Header } from "../Header";
 import { Footer } from "../Footer";
@@ -22,14 +22,28 @@ export const RoutesContainer = () => {
     window.scrollTo(0, 0);
   }, [path.pathname]);
 
+  const [scrolled, setScrolled] = useState(false);
+
+  const { scrollY } = useScroll();
+
+  // UseEffect feito para ativar as estilizações do header quando scrollar
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      latest > 30 ? setScrolled(true) : setScrolled(false);
+    });
+  }, [scrolled]);
+
   return (
     <>
-      <Header />
+      <Header scrolled={scrolled} />
       <AnimatePresence mode="wait">
         <Routes key={path.pathname} location={path}>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route
+            path="/projects/:id"
+            element={<ProjectDetail scrolled={scrolled} />}
+          />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/career" element={<Career />} />

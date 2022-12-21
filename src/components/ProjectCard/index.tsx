@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import { itemAnimation } from "../../utils/StaggerItems";
+import { itemAnimation } from "../../utils/Animations";
 import { ProjectType } from "../../types/Projects";
 
 type ProjectCardProps = {
@@ -14,7 +14,7 @@ export const ProjectCard = ({ project, position }: ProjectCardProps) => (
     variants={itemAnimation}
     // Dando um padding top para os itens impares
     className={`h-96 w-96 2xl:w-[32rem] ${
-      position % 2 == 1 && "lg:my-96"
+      position % 2 == 1 && "lg:my-20"
     } pb-6`}
   >
     <Link

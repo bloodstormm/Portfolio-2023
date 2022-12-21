@@ -10,6 +10,6 @@ export const PageTransition = () => (
     }}
     exit={{ height: window.innerHeight, top: [0, 0] }}
     transition={{ ...transition, duration: 1 }}
-    className="absolute left-0 z-30 h-screen w-full bg-accent"
+    className="absolute left-0 z-50 h-screen w-full bg-accent"
   />
 );

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { container } from "../../utils/StaggerItems";
+import { StaggerContainer } from "../../utils/Animations";
 import { useFetchProjects } from "../../hooks/useFetchProjects";
 
 import { PageTransition } from "../../components/PageTransition";
@@ -12,12 +12,7 @@ export const Projects = () => {
   return (
     <>
       <PageTransition />
-      <motion.section
-        initial={{ visibility: "hidden" }}
-        animate={{ visibility: "visible" }}
-        exit={{ visibility: "hidden", transition: { delay: 1 } }}
-        className="flex w-full flex-col items-center"
-      >
+      <motion.section className="flex w-full flex-col items-center">
         <h1 className="mb-9 font-Wulkan text-4xl sm:text-5xl">
           Últimos Projetos
         </h1>
@@ -33,7 +28,7 @@ export const Projects = () => {
           </>
         ) : (
           <motion.div
-            variants={container}
+            variants={StaggerContainer}
             initial="hidden"
             animate="show"
             exit="exit"

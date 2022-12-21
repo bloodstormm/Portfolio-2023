@@ -4,8 +4,12 @@ import { transition } from "../../utils/Transition";
 import { BsInstagram } from "react-icons/bs";
 import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
-import { container, itemAnimation } from "../../utils/StaggerItems";
-import { animatedTitle, letterAnimation } from "../../utils/StaggerText";
+import {
+  StaggerContainer,
+  itemAnimation,
+  StaggerText,
+  letterAnimation,
+} from "../../utils/Animations";
 import { PageTransition } from "../../components/PageTransition";
 
 export const Contact = () => {
@@ -27,7 +31,7 @@ export const Contact = () => {
       >
         <div className="max-w-5xl overflow-hidden text-center">
           <motion.h1
-            variants={animatedTitle}
+            variants={StaggerText}
             initial="initial"
             animate="animate"
             exit="exit"
@@ -57,7 +61,7 @@ export const Contact = () => {
         </div>
 
         <motion.div
-          variants={container}
+          variants={StaggerContainer}
           initial="hidden"
           animate="show"
           exit="exit"

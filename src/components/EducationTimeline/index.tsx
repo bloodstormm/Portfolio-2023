@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import { education } from "../../constants/Education";
 
-import { container, itemAnimation } from "../../utils/StaggerItems";
+import { StaggerContainer, itemAnimation } from "../../utils/Animations";
 import { formattedDate } from "../../utils/FormattedDate";
 
 export const EducationTimeline = () => {
@@ -14,7 +14,7 @@ export const EducationTimeline = () => {
     <div className="lg:pl-16">
       <h2 className="mb-6 px-6 text-lg lg:px-0">Meus Estudos:</h2>
       <motion.ul
-        variants={container}
+        variants={StaggerContainer}
         initial="hidden"
         animate="show"
         exit="exit"

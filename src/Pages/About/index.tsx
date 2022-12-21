@@ -3,7 +3,7 @@ import aboutPic from "../../assets/aboutPic.jpg";
 import { HiOutlineCodeBracket, HiOutlineScale } from "react-icons/hi2";
 import { AiOutlineEye } from "react-icons/ai";
 import { transition } from "../../utils/Transition";
-import { container, itemAnimation } from "../../utils/StaggerItems";
+import { StaggerContainer, itemAnimation } from "../../utils/Animations";
 import { PageTransition } from "../../components/PageTransition";
 
 export const About = () => {
@@ -58,7 +58,7 @@ export const About = () => {
           </div>
 
           <motion.div
-            variants={container}
+            variants={StaggerContainer}
             initial="hidden"
             animate="show"
             exit="exit"

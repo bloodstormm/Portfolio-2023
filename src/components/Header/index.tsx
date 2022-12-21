@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { fadeInDown } from "../../utils/Animations";
 import { MenuModal } from "../MenuModal";
@@ -9,18 +9,12 @@ import { MenuModal } from "../MenuModal";
 import { BsDownload } from "react-icons/bs";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 
-export const Header = () => {
+type HeaderProps = {
+  scrolled: boolean;
+};
+
+export const Header = ({ scrolled }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  const { scrollY } = useScroll();
-
-  // UseEffect feito para ativar as estilizações do header quando scrollar
-  useEffect(() => {
-    return scrollY.onChange((latest) => {
-      latest > 30 ? setScrolled(true) : setScrolled(false);
-    });
-  }, [scrolled]);
 
   return (
     <motion.div

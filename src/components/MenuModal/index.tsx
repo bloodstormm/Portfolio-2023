@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { BsDownload } from "react-icons/bs";
 
 import { fadeIn, fadeInUp, scaleUp } from "../../utils/Animations";
-import { container, itemAnimation } from "../../utils/StaggerItems";
+import { StaggerContainer, itemAnimation } from "../../utils/Animations";
 
 type MenuModalProps = {
   isOpen: boolean;
@@ -21,7 +21,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => (
         onClose={() => setIsOpen(false)}
         className="relative z-30"
       >
-        {/* The backdrop, rendered as a fixed sibling to the panel container */}
+        {/* The backdrop, rendered as a fixed sibling to the panel StaggerContainer */}
         <motion.div
           {...fadeIn}
           transition={{ duration: 0.7 }}
@@ -29,9 +29,9 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => (
           aria-hidden="true"
         />
 
-        {/* Full-screen scrollable container */}
+        {/* Full-screen scrollable StaggerContainer */}
         <div className="fixed inset-0 overflow-y-auto">
-          {/* Container to center the panel */}
+          {/* StaggerContainer to center the panel */}
           <div className="flex min-h-full items-center justify-center p-4">
             {/* The actual dialog panel  */}
             <Dialog.Panel
@@ -49,7 +49,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => (
               </Dialog.Title>
 
               <motion.div
-                variants={container}
+                variants={StaggerContainer}
                 initial="hidden"
                 animate="show"
                 exit="exit"

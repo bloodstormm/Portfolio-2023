@@ -1,18 +1,22 @@
 import { Link, useParams } from "react-router-dom";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import { useFetchProjects } from "../../hooks/useFetchProjects";
 
-import { animatedTitle, letterAnimation } from "../../utils/StaggerText";
+import { StaggerText, letterAnimation } from "../../utils/Animations";
 import { transition } from "../../utils/Transition";
 
 import { PageTransition } from "../../components/PageTransition";
 
 import { BsArrowReturnLeft } from "react-icons/bs";
 import { FiArrowUpRight } from "react-icons/fi";
-import { useEffect } from "react";
+import { fadeInUp } from "../../utils/Animations";
 
-export const ProjectDetail = () => {
+type ProjectDetailProps = {
+  scrolled: boolean;
+};
+
+export const ProjectDetail = ({ scrolled }: ProjectDetailProps) => {
   const { id } = useParams();
   const transitionImage = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.91] };
 
@@ -21,6 +25,8 @@ export const ProjectDetail = () => {
   const filteredProject = projects?.find((project) => project.name === id);
 
   const fragmentedTitle = filteredProject?.name.split("");
+
+  console.log(scrolled);
 
   return (
     <>
@@ -32,8 +38,8 @@ export const ProjectDetail = () => {
           {loading ? (
             <p className="w-full text-center text-2xl">Carregando...</p>
           ) : (
-            <motion.section className="mx-auto mb-16">
-              <motion.div className="container relative mx-auto overflow-hidden p-6 sm:mb-14">
+            <motion.section className="relative mx-auto mb-16">
+              <motion.div className="container mx-auto overflow-hidden p-6 sm:mb-14">
                 <motion.h4
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -45,7 +51,7 @@ export const ProjectDetail = () => {
                 </motion.h4>
 
                 <motion.div
-                  variants={animatedTitle}
+                  variants={StaggerText}
                   initial="initial"
                   animate="animate"
                   exit="exit"
@@ -80,18 +86,20 @@ export const ProjectDetail = () => {
                   </a>
                 </motion.div>
 
-                <motion.div
-                  initial={{ y: 100, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: 100, opacity: 0 }}
-                  transition={{ ...transition, delay: 1.2 }}
-                  className="absolute top-6 right-6 hidden rounded-xl bg-accent/30 p-3 transition-colors duration-300 hover:bg-accent/40 lg:block"
-                >
-                  <Link to="/projects" className="flex items-center gap-2">
-                    <BsArrowReturnLeft />
-                    <p>Voltar para Projetos</p>
-                  </Link>
-                </motion.div>
+                <AnimatePresence>
+                  {scrolled && (
+                    <motion.div
+                      {...fadeInUp}
+                      transition={{ ...transition }}
+                      className="fixed bottom-10 right-8 z-30 block rounded-xl bg-accent/30 p-3 transition-colors duration-300 hover:bg-accent/40"
+                    >
+                      <Link to="/projects" className="flex items-center gap-2">
+                        <BsArrowReturnLeft className="text-2xl sm:text-base" />
+                        <p className="hidden sm:block">Voltar para Projetos</p>
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
               <motion.div
                 initial={{ width: 1100, height: 600, y: "-30%" }}
