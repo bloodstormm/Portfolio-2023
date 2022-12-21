@@ -1,7 +1,3 @@
-import { FaReact, FaHtml5, FaPython, FaFigma } from "react-icons/fa";
-import { SiTailwindcss } from "react-icons/si";
-import { RiFileExcel2Line } from "react-icons/ri";
-import { HiOutlineMail } from "react-icons/hi";
 import { EducationType } from "../../types/Education";
 
 export const education: EducationType[] = [

@@ -1,4 +1,4 @@
-import { transition } from "../Transition";
+const transition = { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.9] };
 
 const fadeIn = {
   initial: { opacity: 0 },
@@ -14,9 +14,16 @@ const fadeInDown = {
 };
 
 const fadeInUp = {
-  initial: { y: 100, opacity: 0 },
+  initial: { y: 150, opacity: 0 },
   animate: { y: 0, opacity: 1 },
-  exit: { y: 100, opacity: 0 },
+  exit: { y: 150, opacity: 0 },
+  transition: { ...transition, duration: 1 },
+};
+
+const fadeInLeft = {
+  initial: { x: 120, opacity: 0 },
+  animate: { x: 0, opacity: 1 },
+  exit: { x: 120, opacity: 0, transition: { ...transition, delay: 0 } },
   transition: { ...transition, duration: 1 },
 };
 
@@ -78,9 +85,11 @@ export {
   fadeIn,
   fadeInDown,
   fadeInUp,
+  fadeInLeft,
   scaleUp,
   StaggerContainer,
   itemAnimation,
   StaggerText,
   letterAnimation,
+  transition,
 };

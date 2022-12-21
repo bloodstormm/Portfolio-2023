@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useFetchProjects } from "../../hooks/useFetchProjects";
 
 import { StaggerText, letterAnimation } from "../../utils/Animations";
-import { transition } from "../../utils/Transition";
+import { transition } from "../../utils/Animations";
 
 import { PageTransition } from "../../components/PageTransition";
 
@@ -17,28 +17,30 @@ type ProjectDetailProps = {
 };
 
 export const ProjectDetail = ({ scrolled }: ProjectDetailProps) => {
+  // ID usado para encontrar o projeto correto
   const { id } = useParams();
+
   const transitionImage = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.91] };
 
   const { projects, loading, error } = useFetchProjects();
 
   const filteredProject = projects?.find((project) => project.name === id);
-
   const fragmentedTitle = filteredProject?.name.split("");
-
-  console.log(scrolled);
 
   return (
     <>
       <PageTransition />
       {error ? (
-        <p>{error.message}</p>
+        <div className="text-center">
+          <h1 className="mb-6 font-Wulkan text-4xl">Ocorreu um erro =(</h1>
+          <p>Erro: {error.message}</p>
+        </div>
       ) : (
         <>
           {loading ? (
             <p className="w-full text-center text-2xl">Carregando...</p>
           ) : (
-            <motion.section className="relative mx-auto mb-16">
+            <section className="relative mx-auto mb-16">
               <motion.div className="container mx-auto overflow-hidden p-6 sm:mb-14">
                 <motion.h4
                   initial={{ y: 50, opacity: 0 }}
@@ -172,7 +174,7 @@ export const ProjectDetail = ({ scrolled }: ProjectDetailProps) => {
                   />
                 </div>
               </motion.div>
-            </motion.section>
+            </section>
           )}
         </>
       )}

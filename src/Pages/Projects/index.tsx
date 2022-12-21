@@ -13,7 +13,7 @@ export const Projects = () => {
     <>
       <PageTransition />
       <motion.section className="flex w-full flex-col items-center">
-        <h1 className="mb-9 font-Wulkan text-4xl sm:text-5xl">
+        <h1 className="mb-16 font-Wulkan text-4xl sm:text-5xl">
           Últimos Projetos
         </h1>
 

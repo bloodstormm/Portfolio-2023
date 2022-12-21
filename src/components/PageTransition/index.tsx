@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { transition } from "../../utils/Transition";
+import { transition } from "../../utils/Animations";
 
 export const PageTransition = () => (
   <motion.div
@@ -10,6 +10,6 @@ export const PageTransition = () => (
     }}
     exit={{ height: window.innerHeight, top: [0, 0] }}
     transition={{ ...transition, duration: 1 }}
-    className="absolute left-0 z-50 h-screen w-full bg-accent"
+    className="absolute top-0 left-0 z-50 h-screen w-full bg-accent"
   />
 );

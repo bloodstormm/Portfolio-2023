@@ -1,42 +1,36 @@
 import { motion } from "framer-motion";
-import { transition } from "../../utils/Transition";
+import { fadeInUp } from "../../utils/Animations";
 
-import { BsInstagram } from "react-icons/bs";
-import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
 import {
   StaggerContainer,
   itemAnimation,
   StaggerText,
   letterAnimation,
 } from "../../utils/Animations";
+
 import { PageTransition } from "../../components/PageTransition";
+
+import { BsInstagram } from "react-icons/bs";
+import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
 
 export const Contact = () => {
   const text = "Quer me contratar ou me conhecer um pouco mais?";
 
   const fragmentedTitle = text.split("");
-  const fragmentedWords = fragmentedTitle.map((word) => word.split(""));
-  console.log(fragmentedWords);
 
   return (
     <>
       <PageTransition />
 
-      <motion.section
-        initial={{ visibility: "hidden" }}
-        animate={{ visibility: "visible" }}
-        exit={{ visibility: "hidden", transition: { delay: 1 } }}
-        className="flex h-[80vh] w-full flex-col items-center justify-center p-4 sm:h-[90vh] sm:p-6 "
-      >
+      <section className="flex h-[80vh] w-full flex-col items-center justify-center p-4 sm:h-[90vh] sm:p-6 ">
         <div className="max-w-5xl overflow-hidden text-center">
           <motion.h1
             variants={StaggerText}
             initial="initial"
             animate="animate"
             exit="exit"
-            transition={{ ...transition, duration: 1.6 }}
-            className=" max-w-6xl font-Wulkan text-5xl lg:text-6xl"
+            className="max-w-6xl font-Wulkan text-4xl lg:text-6xl"
           >
             {fragmentedTitle?.map((letter, index) => (
               <motion.div
@@ -50,10 +44,8 @@ export const Contact = () => {
           </motion.h1>
 
           <motion.h3
-            initial={{ y: 300 }}
-            animate={{ y: 0 }}
-            exit={{ y: 400 }}
-            transition={{ ...transition, duration: 1.6 }}
+            {...fadeInUp}
+            transition={{ ...fadeInUp.transition, duration: 1.6, delay: 0.3 }}
             className="pt-12 pb-6 font-medium"
           >
             Entre em contato:
@@ -101,7 +93,7 @@ export const Contact = () => {
             <FaLinkedinIn />
           </motion.a>
         </motion.div>
-      </motion.section>
+      </section>
     </>
   );
 };

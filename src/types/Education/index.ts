@@ -1,5 +1,3 @@
-import { IconBaseProps } from "react-icons";
-
 export type EducationType = {
   institution: string;
   course: string;

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import { transition } from "../../utils/Transition";
+import { fadeInDown, fadeInUp, transition } from "../../utils/Animations";
 
 import { PageTransition } from "../../components/PageTransition";
 
-import picture from "../../assets/pic.jpg";
+import picture from "../../assets/homePic.jpg";
 import { jnj, opt, villarta } from "../../assets/companies";
 
 import { BsInstagram, BsArrowUpRight, BsGithub } from "react-icons/bs";
@@ -15,16 +15,15 @@ export const Home = () => {
   return (
     <>
       <PageTransition />
+
       <section className="container relative z-20 mx-auto w-full overflow-hidden sm:mt-4">
         <motion.div
-          initial={{ y: 200, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ ...transition, duration: 1 }}
+          {...fadeInUp}
+          transition={{ ...fadeInUp.transition, delay: 0.2 }}
           className="mx-auto grid items-center gap-4 p-8 sm:grid-cols-3 xl:gap-14 "
         >
           <div className="flex flex-col gap-6">
-            <h1 className=" text-center font-Wulkan text-4xl font-medium uppercase text-zinc-700 sm:text-left lg:text-5xl">
+            <h1 className="text-center font-Wulkan text-4xl font-medium uppercase text-darkBrown sm:text-left lg:text-5xl">
               Dev <br className="hidden sm:block" /> Front-End | UI/UX
             </h1>
 
@@ -76,7 +75,7 @@ export const Home = () => {
 
             <Link
               to="/projects"
-              className="absolute -bottom-4 left-6 hidden h-32 w-32 items-center justify-center rounded-full border border-[#3d3731] sm:flex lg:left-14 lg:h-40 lg:w-40 xl:bottom-0"
+              className="absolute -bottom-4 left-6 hidden h-32 w-32 items-center justify-center rounded-full border border-darkBrown sm:flex lg:left-14 lg:h-40 lg:w-40 xl:bottom-0"
             >
               <div className="absolute top-2 right-1 h-6 w-6 rounded-full bg-accent lg:top-1 lg:right-5"></div>
               <p className="w-20">Ver meus Projetos</p>
@@ -85,10 +84,8 @@ export const Home = () => {
           </div>
         </motion.div>
         <motion.div
-          initial={{ y: -70, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -70, opacity: 0 }}
-          transition={{ ...transition, duration: 1.25 }}
+          {...fadeInDown}
+          transition={{ ...fadeInDown.transition, duration: 1.25 }}
           className="flex w-full justify-center gap-6 py-12 sm:gap-20 sm:p-6"
         >
           <img src={jnj} alt="jnj" className="h-8 grayscale sm:h-12 lg:h-16" />

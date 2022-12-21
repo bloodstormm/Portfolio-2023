@@ -1,31 +1,31 @@
 import { motion } from "framer-motion";
+
+import { fadeIn, fadeInUp } from "../../utils/Animations";
+
 import { EducationTimeline } from "../../components/EducationTimeline";
 import { ExperiencesTimeline } from "../../components/ExperiencesTimeline";
 import { PageTransition } from "../../components/PageTransition";
-import { fadeIn, fadeInUp } from "../../utils/Animations";
 
-export const Career = () => {
-  return (
-    <>
-      <PageTransition />
-      <motion.section className="mb-12 mt-6 flex w-full flex-col items-center lg:mt-0">
-        <motion.h1
-          {...fadeInUp}
-          transition={{ ...fadeInUp.transition, delay: 0.4 }}
-          className="mb-12 font-Wulkan text-5xl lg:text-7xl"
-        >
-          Minha Carreira:
-        </motion.h1>
+export const Career = () => (
+  <>
+    <PageTransition />
+    <section className="mb-12 mt-6 flex w-full flex-col items-center lg:mt-0">
+      <motion.h1
+        {...fadeInUp}
+        transition={{ ...fadeInUp.transition, delay: 0.5 }}
+        className="mb-12 font-Wulkan text-5xl lg:text-7xl"
+      >
+        Minha Carreira:
+      </motion.h1>
 
-        <motion.div
-          {...fadeIn}
-          transition={{ delay: 0.6 }}
-          className="flex flex-col gap-16 divide-darkBrown/40 sm:divide-x md:flex-row"
-        >
-          <ExperiencesTimeline />
-          <EducationTimeline />
-        </motion.div>
-      </motion.section>
-    </>
-  );
-};
+      <motion.div
+        {...fadeIn}
+        transition={{ delay: 0.6 }}
+        className="flex flex-col gap-16 divide-darkBrown/40 sm:divide-x md:flex-row"
+      >
+        <ExperiencesTimeline />
+        <EducationTimeline />
+      </motion.div>
+    </section>
+  </>
+);

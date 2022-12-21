@@ -29,7 +29,7 @@ export const ProjectCard = ({ project, position }: ProjectCardProps) => (
       >
         <motion.img
           src={project.image}
-          className="h-48 w-full rounded-2xl object-cover shadow-2xl shadow-darkerAccent/30 sm:h-72"
+          className="h-48 w-full select-none rounded-2xl object-cover shadow-2xl shadow-darkerAccent/30 sm:h-72"
         />
         <div className="px-6  pt-3">
           <h1 className="pt-2 text-xl font-medium">{project.name}</h1>

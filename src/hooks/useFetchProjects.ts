@@ -1,8 +1,9 @@
-import { PostgrestError } from "@supabase/supabase-js";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import supabase from "../api";
+import { PostgrestError } from "@supabase/supabase-js";
+
 import { ProjectType } from "../types/Projects";
+
 export const useFetchProjects = () => {
   const [loading, setLoading] = useState(true);
 
@@ -72,5 +73,5 @@ export const useFetchProjects = () => {
     return () => setCancelled(true);
   }, [projects, error]);
 
-  return { projects, loading, error, getImage, getDetailImages };
+  return { projects, loading, error };
 };
