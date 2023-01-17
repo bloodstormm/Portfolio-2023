@@ -15,9 +15,11 @@ import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
 export const Contact = () => {
-  const text = "Quer me contratar ou me conhecer um pouco mais?";
+  const text1 = "Quer me contratar";
+  const text2 = "ou me conhecer um pouco mais?";
 
-  const fragmentedTitle = text.split("");
+  const fragmentedTitle1 = text1.split("");
+  const fragmentedTitle2 = text2.split("");
 
   return (
     <>
@@ -32,7 +34,21 @@ export const Contact = () => {
             exit="exit"
             className="max-w-6xl font-Wulkan text-4xl lg:text-6xl"
           >
-            {fragmentedTitle?.map((letter, index) => (
+            <div className="mr-4">
+              {fragmentedTitle1?.map((letter, index) => (
+                <motion.div
+                  key={index}
+                  variants={letterAnimation}
+                  style={{
+                    display: "inline-block",
+                    textDecoration: "line-through",
+                  }}
+                >
+                  {letter === " " ? `\xa0` : letter}
+                </motion.div>
+              ))}
+            </div>
+            {fragmentedTitle2?.map((letter, index) => (
               <motion.div
                 key={index}
                 variants={letterAnimation}

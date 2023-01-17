@@ -10,7 +10,7 @@ export const experiences: ExperiencesType[] = [
     initialDate: "01/2023",
     finalDate: "Atualmente",
     role: "Estágio UI/UX",
-    stack: [FaFigma, FaReact],
+    stack: [],
   },
   {
     company: "Optimus GIS",

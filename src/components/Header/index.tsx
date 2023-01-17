@@ -69,7 +69,10 @@ export const Header = ({ scrolled }: HeaderProps) => {
           </Link>
         </div>
 
-        <button className="hidden items-center gap-3 rounded-3xl bg-accent py-3 px-5 text-white lg:flex">
+        <button
+          disabled
+          className="hidden items-center gap-3 rounded-3xl bg-accent py-3 px-5 text-white transition-colors disabled:cursor-not-allowed disabled:hover:bg-accent/40 disabled:hover:text-white/80 lg:flex"
+        >
           Baixar Currículo
           <BsDownload />
         </button>
