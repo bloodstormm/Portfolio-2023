@@ -1,16 +1,23 @@
 import { ExperiencesType } from "./../../types/Experiences/index";
-import { FaReact, FaHtml5, FaPython, FaFigma } from "react-icons/fa";
+import {
+  FaReact,
+  FaHtml5,
+  FaPython,
+  FaJira,
+  FaDrupal,
+  FaFigma,
+} from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
 import { RiFileExcel2Line } from "react-icons/ri";
 import { HiOutlineMail } from "react-icons/hi";
 
 export const experiences: ExperiencesType[] = [
   {
-    company: "Jhonson & Jhonson",
+    company: "Johnson & Johnson",
     initialDate: "01/2023",
     finalDate: "Atualmente",
-    role: "Estágio UI/UX",
-    stack: [],
+    role: "Estágio em IT",
+    stack: [FaJira, FaDrupal, FaFigma],
   },
   {
     company: "Optimus GIS",

@@ -43,7 +43,7 @@ export const ExperiencesTimeline = () => (
               </p>
 
               <div>
-                <h4 className="font-medium">Stack:</h4>
+                <h4 className="font-medium">Ferramentas / Softwares:</h4>
                 <div className="mt-2 flex items-center gap-4">
                   {stack.map((Item, index) => (
                     <p
