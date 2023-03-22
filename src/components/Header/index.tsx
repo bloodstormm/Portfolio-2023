@@ -80,7 +80,7 @@ export const Header = ({ scrolled }: HeaderProps) => {
           href={curriculumUrl}
           download
           target="_blank" 
-          className="hidden items-center gap-3 rounded-3xl bg-accent hover:brightness-110 py-3 px-5 text-white transition-all transition-opacity disabled:cursor-not-allowed disabled:hover:bg-accent/40 disabled:hover:text-white/80 lg:flex"
+          className="hidden items-center gap-3 rounded-3xl bg-accent hover:brightness-110 py-3 px-5 text-white transition-all disabled:cursor-not-allowed disabled:hover:bg-accent/40 disabled:hover:text-white/80 lg:flex"
         >
           Baixar Currículo
           <BsDownload />
