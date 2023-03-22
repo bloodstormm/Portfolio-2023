@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
@@ -8,6 +8,7 @@ import { MenuModal } from "../MenuModal";
 
 import { BsDownload } from "react-icons/bs";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
+import { useFetchCurriculum } from "../../hooks/useFetchCurriculum";
 
 type HeaderProps = {
   scrolled: boolean;
@@ -15,6 +16,12 @@ type HeaderProps = {
 
 export const Header = ({ scrolled }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const {getCurriculum} = useFetchCurriculum()
+  
+  const curriculumUrl = useMemo(() => getCurriculum(), []);
+
+  console.log()
+
 
   return (
     <motion.div
@@ -69,13 +76,15 @@ export const Header = ({ scrolled }: HeaderProps) => {
           </Link>
         </div>
 
-        <button
-          disabled
-          className="hidden items-center gap-3 rounded-3xl bg-accent py-3 px-5 text-white transition-colors disabled:cursor-not-allowed disabled:hover:bg-accent/40 disabled:hover:text-white/80 lg:flex"
+        <a
+          href={curriculumUrl}
+          download
+          target="_blank" 
+          className="hidden items-center gap-3 rounded-3xl bg-accent hover:brightness-110 py-3 px-5 text-white transition-all transition-opacity disabled:cursor-not-allowed disabled:hover:bg-accent/40 disabled:hover:text-white/80 lg:flex"
         >
           Baixar Currículo
           <BsDownload />
-        </button>
+        </a>
       </div>
 
       {/* Menu p Mobile */}
