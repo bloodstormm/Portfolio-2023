@@ -5,7 +5,7 @@ import { fadeInDown, fadeInUp, transition } from "../../utils/Animations";
 
 import { PageTransition } from "../../components/PageTransition";
 
-import picture from "../../assets/homePic.jpg";
+import picture from "../../assets/homePic.webp";
 import { jnj, opt, villarta } from "../../assets/companies";
 
 import { BsInstagram, BsArrowUpRight, BsGithub } from "react-icons/bs";

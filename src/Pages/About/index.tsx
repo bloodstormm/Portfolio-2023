@@ -39,7 +39,7 @@ export const About = () => {
             </h1>
 
             <p className="max-w-sm py-8 text-sm sm:max-w-2xl sm:text-base">
-              Eu me chamo Nícolas Malachias. Tenho 18 anos e atualmente sou
+              Eu me chamo Nícolas Malachias. Tenho 19 anos e atualmente sou
               estudante de Análise e Desenvolvimento de Sistemas na UNITAU.
               Estou estagiando na Johnson & Johnson na área de TI. Amo música e
               curto muito tocar violão e guitarra, além de praticar ciclismo e
