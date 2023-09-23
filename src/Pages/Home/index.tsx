@@ -4,14 +4,22 @@ import { motion } from "framer-motion";
 import { fadeInDown, fadeInUp, transition } from "../../utils/Animations";
 
 import { PageTransition } from "../../components/PageTransition";
+import { homeImages } from "../../constants/MyImages";
 
-import picture from "../../assets/homePic.webp";
 import { jnj, opt, villarta } from "../../assets/companies";
 
 import { BsInstagram, BsArrowUpRight, BsGithub } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 export const Home = () => {
+  const [homeImage, setHomeImage] = useState("");
+  useEffect(() => {
+    const randomPicture = Math.floor(Math.random() * homeImages.length);
+    // Providing a random index to get the image and informations about it
+    setHomeImage(homeImages[randomPicture].image);
+  }, [location.pathname]);
+  
   return (
     <>
       <PageTransition />
@@ -64,7 +72,7 @@ export const Home = () => {
               initial={{ scale: 1.15 }}
               animate={{ scale: 1 }}
               transition={{ ...transition, duration: 1.45, delay: 0.7 }}
-              src={picture}
+              src={homeImage}
               className="mx-auto w-full "
             />
           </div>
@@ -75,9 +83,9 @@ export const Home = () => {
 
             <Link
               to="/projects"
-              className="absolute -bottom-4 left-6 hidden h-32 w-32 items-center justify-center rounded-full border border-darkBrown sm:flex lg:left-14 lg:h-40 lg:w-40 xl:bottom-0"
+              className="absolute group -bottom-4 hover:scale-105 transition duration-300 left-6 hidden h-32 w-32 items-center justify-center rounded-full border border-darkBrown sm:flex lg:left-14 lg:h-40 lg:w-40 xl:bottom-0"
             >
-              <div className="absolute top-2 right-1 h-6 w-6 rounded-full bg-accent lg:top-1 lg:right-5"></div>
+              <div className="absolute top-2 right-1 h-6 w-6 rounded-full group-hover:animate-pulse transition bg-accent lg:top-1 lg:right-5"></div>
               <p className="w-20">Ver meus Projetos</p>
               <BsArrowUpRight className="h-5 w-5" />
             </Link>
@@ -86,9 +94,9 @@ export const Home = () => {
         <motion.div
           {...fadeInDown}
           transition={{ ...fadeInDown.transition, duration: 1.25 }}
-          className="flex w-full justify-center gap-6 py-12 sm:gap-20 sm:p-6"
+          className="flex w-full justify-center items-center gap-6 py-12 sm:gap-20 sm:p-6"
         >
-          <img src={jnj} alt="jnj" className="h-8 grayscale sm:h-12 lg:h-16" />
+          <img src={jnj} alt="jnj" className="h-8 grayscale sm:h-12 lg:h-9" />
           <img src={opt} alt="opt" className="h-8 grayscale sm:h-12 lg:h-16" />
           <img
             src={villarta}

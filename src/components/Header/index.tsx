@@ -7,6 +7,7 @@ import { fadeInDown } from "../../utils/Animations";
 import { MenuModal } from "../MenuModal";
 
 import { BsDownload } from "react-icons/bs";
+import { MdOpenInNew } from "react-icons/md";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { useFetchCurriculum } from "../../hooks/useFetchCurriculum";
 
@@ -28,8 +29,8 @@ export const Header = ({ scrolled }: HeaderProps) => {
       {...fadeInDown}
       transition={{ ...fadeInDown.transition, delay: 1.1 }}
       className={`${
-        scrolled && "bg-darkBrown/10 text-whity shadow-sm backdrop-blur-lg"
-      } sticky top-0 z-30 flex  py-6 transition-colors duration-150`}
+        scrolled && "bg-darkBrown/10 text-whity shadow-sm backdrop-blur-xl"
+      } sticky top-0 z-30 flex py-6 transition-colors duration-150`}
     >
       <div className="container mx-auto flex items-center justify-between px-10 xl:px-0 ">
         <Link
@@ -83,7 +84,7 @@ export const Header = ({ scrolled }: HeaderProps) => {
           className="hidden items-center gap-3 rounded-3xl bg-accent hover:brightness-110 py-3 px-5 text-white transition-all disabled:cursor-not-allowed disabled:hover:bg-accent/40 disabled:hover:text-white/80 lg:flex"
         >
           Ver Currículo
-          <BsDownload />
+          <MdOpenInNew />
         </a>
       </div>
 

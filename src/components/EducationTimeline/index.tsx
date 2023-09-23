@@ -18,7 +18,8 @@ export const EducationTimeline = () => {
         initial="hidden"
         animate="show"
         exit="exit"
-        // Solucao encontrada no discord 👇🏽
+        // Solucao encontrada no discord p 
+        // fazer a ultima perninha da timeline sumir 👇🏽
         className="[&>*:last-child_div:first-child]:before:w-0"
       >
         {education.map(
@@ -44,22 +45,22 @@ export const EducationTimeline = () => {
                 className="flex w-4/5 flex-col justify-center rounded-xl bg-accent/20 
                 p-4 text-base transition duration-300 hover:brightness-110 sm:w-[29rem]"
               >
-                <p className="mb-1 text-xs text-accent">
+                <p className="mb-1 text-xs text-darkerAccent font-semibold">
                   {initialDate} - {finalDate}
                 </p>
 
                 {/* Se o curso ja estiver concluido, adicionar um concluido */}
                 {today.isAfter(formattedDate(finalDate)) ? (
-                  <p className="absolute top-2 right-12 rounded-xl bg-accent/60 py-1 px-3 text-xs lg:right-2">
+                  <p className="absolute top-3 right-12 rounded-xl bg-accent/60 py-1 px-3 text-xs lg:right-3">
                     Concluído!
                   </p>
                 ) : (
-                  <p className="absolute top-2 right-12 rounded-xl bg-accent/60 py-1 px-3 text-xs lg:right-2">
+                  <p className="absolute top-3 right-12 rounded-xl bg-accent/60 py-1 px-3 text-xs lg:right-3">
                     {degree}
                   </p>
                 )}
                 <h2 className=" font-semibold">{institution}</h2>
-                <h4 className="text-sm font-medium text-accent/80">{course}</h4>
+                <h4 className="text-sm font-medium text-darkerAccent">{course}</h4>
 
                 <p className="my-4">
                   {description

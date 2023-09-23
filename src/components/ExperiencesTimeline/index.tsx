@@ -30,11 +30,11 @@ export const ExperiencesTimeline = () => (
               className="flex w-4/5 flex-col justify-center rounded-xl
                bg-accent/20 p-4 text-base transition duration-300 hover:brightness-110 sm:w-[29rem]"
             >
-              <p className="mb-1 text-xs text-accent">
+              <p className="mb-1 text-xs text-darkerAccent font-semibold">
                 {initialDate} - {finalDate}
               </p>
               <h2 className=" font-semibold">{company}</h2>
-              <h4 className="text-sm font-medium text-accent/80">{role}</h4>
+              <h4 className="text-sm font-medium text-darkerAccent">{role}</h4>
 
               <p className="my-4">
                 {description

@@ -41,7 +41,6 @@ export const Contact = () => {
                   variants={letterAnimation}
                   style={{
                     display: "inline-block",
-                    textDecoration: "line-through",
                   }}
                 >
                   {letter === " " ? `\xa0` : letter}

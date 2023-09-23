@@ -1,10 +1,13 @@
-import { MyImagesType } from "./../../types/MyImages/index";
+import { aboutImagesType, homeImagesType } from "./../../types/MyImages/index";
 import aboutPic from "../../assets/about/aboutPic.webp";
 import aboutPic2 from "../../assets/about/aboutPic2.webp";
 import aboutPic3 from "../../assets/about/aboutPic3.webp";
 import aboutPic4 from "../../assets/about/aboutPic4.webp";
 import aboutPic5 from "../../assets/about/aboutPic5.webp";
-export const myImages: MyImagesType[] = [
+import homePicture1 from "../../assets/homePic1.webp";
+import homePicture2 from "../../assets/homePic2.webp";
+import homePicture3 from "../../assets/homePic3.webp";
+export const aboutImages: aboutImagesType[] = [
   {
     image: aboutPic,
     description:
@@ -27,3 +30,16 @@ export const myImages: MyImagesType[] = [
     description: "Foto tirada em São Lourenco, no Parque das Águas, em 2023.",
   },
 ];
+
+export const homeImages: homeImagesType[] = [
+  {
+    image: homePicture1
+  },
+  {
+    image: homePicture2
+  },
+  {
+    image: homePicture3
+  },
+
+]

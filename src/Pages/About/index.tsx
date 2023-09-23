@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { myImages } from "../../constants/MyImages";
+import { aboutImages } from "../../constants/MyImages";
 
 import { fadeInDown, fadeInLeft, transition } from "../../utils/Animations";
 import { StaggerContainer, itemAnimation } from "../../utils/Animations";
+import moment from "moment";
 
 import { PageTransition } from "../../components/PageTransition";
 
@@ -14,13 +15,16 @@ export const About = () => {
   const [aboutImage, setAboutImage] = useState("");
   const [imageDescription, setImageDescription] = useState("");
 
-  useEffect(() => {
-    const randomPicture = Math.floor(Math.random() * myImages.length);
-    // Providing a random index to get the image and informations about it
-    setAboutImage(myImages[randomPicture].image);
-    setImageDescription(myImages[randomPicture].description);
+  const dataNascimento = moment("2004-03-28", "YYYY-MM-DD");
+  const hoje = moment();
+  // Calcular idade
+  const idade = hoje.diff(dataNascimento, "years");
 
-    console.log(randomPicture);
+  useEffect(() => {
+    const randomPicture = Math.floor(Math.random() * aboutImages.length);
+    // Providing a random index to get the image and informations about it
+    setAboutImage(aboutImages[randomPicture].image);
+    setImageDescription(aboutImages[randomPicture].description);
   }, [location.pathname]);
 
   return (
@@ -39,7 +43,7 @@ export const About = () => {
             </h1>
 
             <p className="max-w-sm py-8 text-sm sm:max-w-2xl sm:text-base">
-              Eu me chamo Nícolas Malachias. Tenho 19 anos e atualmente sou
+              Eu me chamo Nícolas Malachias. Tenho {idade} anos e atualmente sou
               estudante de Análise e Desenvolvimento de Sistemas na UNITAU.
               Estou estagiando na Johnson & Johnson na área de TI. Amo música e
               curto muito tocar violão e guitarra, além de praticar ciclismo e
@@ -69,7 +73,7 @@ export const About = () => {
           >
             <motion.div
               variants={itemAnimation}
-              className="rounded-xl bg-[#f2e9e1] p-4 text-center sm:max-w-[17rem]"
+              className="rounded-xl bg-[#f2e9e1] p-4 text-center transition-[filter] duration-300 hover:brightness-105 sm:max-w-[17rem]"
             >
               <HiOutlineCodeBracket className="mx-auto mb-2 text-4xl text-accent" />
               <h3 className="font-semibold lg:text-lg ">Front-end</h3>
@@ -80,7 +84,7 @@ export const About = () => {
             </motion.div>
             <motion.div
               variants={itemAnimation}
-              className="rounded-xl bg-[#f2e9e1] p-4 text-center sm:max-w-[17rem]"
+              className="rounded-xl bg-[#f2e9e1] p-4 text-center transition-[filter] duration-300 hover:brightness-105 sm:max-w-[17rem]"
             >
               <AiOutlineEye className="mx-auto mb-2 text-4xl text-accent" />
               <h3 className="text-base font-semibold lg:text-lg ">
@@ -93,7 +97,7 @@ export const About = () => {
             </motion.div>
             <motion.div
               variants={itemAnimation}
-              className="rounded-xl bg-[#f2e9e1] p-4 text-center sm:max-w-[17rem]"
+              className="rounded-xl bg-[#f2e9e1] p-4 text-center transition-[filter] duration-300 hover:brightness-105 sm:max-w-[17rem]"
             >
               <HiOutlineScale className="mx-auto mb-2 text-4xl text-accent" />
               <h3 className="text-base font-semibold lg:text-lg ">

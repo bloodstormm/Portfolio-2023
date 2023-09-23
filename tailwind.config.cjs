@@ -16,6 +16,5 @@ module.exports = {
         whity: "#fff7ec",
       },
     },
-  },
-  plugins: [require("@tailwindcss/line-clamp")],
+  }
 };
