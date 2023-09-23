@@ -14,7 +14,7 @@ export const ProjectCard = ({ project, position }: ProjectCardProps) => (
     variants={itemAnimation}
     // Dando um padding top para os itens impares
     className={`h-96 w-96 2xl:w-[32rem] ${
-      position % 2 == 1 && "lg:my-20"
+      position % 2 == 1 && "md:my-20"
     } pb-6`}
   >
     <Link

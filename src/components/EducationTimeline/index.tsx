@@ -11,14 +11,14 @@ export const EducationTimeline = () => {
   const today = moment(moment().toISOString());
 
   return (
-    <div className="lg:pl-16">
+    <div className="xl:pl-16">
       <h2 className="mb-6 px-6 text-lg lg:px-0">Meus Estudos:</h2>
       <motion.ul
         variants={StaggerContainer}
         initial="hidden"
         animate="show"
         exit="exit"
-        // Solucao encontrada no discord p 
+        // Solucao encontrada no discord p
         // fazer a ultima perninha da timeline sumir 👇🏽
         className="[&>*:last-child_div:first-child]:before:w-0"
       >
@@ -37,8 +37,8 @@ export const EducationTimeline = () => {
               className="relative mx-auto flex items-baseline gap-6 pl-4 pb-5 sm:max-w-none"
             >
               <div
-                className="right-0 h-3 w-3 rounded-full bg-[#785d38] before:absolute before:left-[22px] before:h-full
-                before:w-[1px] before:bg-[#785d38]"
+                className="right-0 h-3 w-3 rounded-full bg-darkerAccent before:absolute before:left-[22px] before:h-full
+                before:w-[1px] before:bg-darkerAccent"
               />
 
               <div
@@ -60,7 +60,9 @@ export const EducationTimeline = () => {
                   </p>
                 )}
                 <h2 className=" font-semibold">{institution}</h2>
-                <h4 className="text-sm font-medium text-darkerAccent">{course}</h4>
+                <h4 className="text-sm font-medium text-darkerAccent">
+                  {course}
+                </h4>
 
                 <p className="my-4">
                   {description

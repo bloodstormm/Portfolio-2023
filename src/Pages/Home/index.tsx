@@ -19,7 +19,7 @@ export const Home = () => {
     // Providing a random index to get the image and informations about it
     setHomeImage(homeImages[randomPicture].image);
   }, [location.pathname]);
-  
+
   return (
     <>
       <PageTransition />
@@ -28,11 +28,11 @@ export const Home = () => {
         <motion.div
           {...fadeInUp}
           transition={{ ...fadeInUp.transition, delay: 0.2 }}
-          className="mx-auto grid items-center gap-4 p-8 sm:grid-cols-3 xl:gap-14 "
+          className="mx-auto grid items-center gap-4 p-8 md:grid-cols-2 lg:grid-cols-3 xl:gap-14 "
         >
           <div className="flex flex-col gap-6">
-            <h1 className="text-center font-Wulkan text-4xl font-medium uppercase text-darkBrown sm:text-left lg:text-5xl">
-              Dev <br className="hidden sm:block" /> Front-End | UI/UX
+            <h1 className="text-center font-Wulkan text-4xl font-medium uppercase text-darkBrown lg:text-left lg:text-5xl">
+              Dev <br className="hidden lg:block" /> Front-End | UI/UX
             </h1>
 
             <p className="text-sm lg:text-base">
@@ -77,7 +77,7 @@ export const Home = () => {
             />
           </div>
           <div className="relative h-2/3 ">
-            <h1 className="text-center font-Wulkan text-4xl uppercase sm:text-left lg:text-6xl">
+            <h1 className="text-center font-Wulkan text-4xl uppercase md:hidden lg:block sm:text-left lg:text-6xl">
               Nícolas Malachias
             </h1>
 
@@ -94,14 +94,22 @@ export const Home = () => {
         <motion.div
           {...fadeInDown}
           transition={{ ...fadeInDown.transition, duration: 1.25 }}
-          className="flex w-full justify-center items-center gap-6 py-12 sm:gap-20 sm:p-6"
+          className="flex mx-auto overflow-x-auto w-11/12 md:w-3/4 lg:w-full justify-center items-center gap-6 pt-4 pb-10 lg:gap-14 2xl:gap-20 sm:p-6"
         >
-          <img src={jnj} alt="jnj" className="h-8 grayscale sm:h-12 lg:h-9" />
-          <img src={opt} alt="opt" className="h-8 grayscale sm:h-12 lg:h-16" />
+          <img
+            src={jnj}
+            alt="jnj"
+            className="h-4 grayscale sm:h-6 lg:h-7 2xl:h-9"
+          />
+          <img
+            src={opt}
+            alt="opt"
+            className="h-7 grayscale sm:h-12 lg:h-14 2xl:h-16"
+          />
           <img
             src={villarta}
             alt="villarta"
-            className="h-8 grayscale sm:h-12 lg:h-16"
+            className="h-7 grayscale sm:h-12 lg:h-14 2xl:h-16"
           />
         </motion.div>
       </section>

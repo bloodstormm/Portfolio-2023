@@ -22,8 +22,8 @@ export const ExperiencesTimeline = () => (
             className="relative mx-auto flex items-baseline gap-6 pl-4 pb-5 sm:max-w-none"
           >
             <div
-              className="right-0 h-3 w-3 rounded-full bg-[#785d38] before:absolute before:left-[22px] before:h-full
-               before:w-[1px] before:bg-[#785d38] "
+              className="right-0 h-3 w-3 rounded-full bg-darkerAccent before:absolute before:left-[22px] before:h-full
+               before:w-[1px] before:bg-darkerAccent "
             ></div>
 
             <div

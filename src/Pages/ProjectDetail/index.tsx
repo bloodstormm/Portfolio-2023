@@ -129,7 +129,7 @@ export const ProjectDetail = ({ scrolled }: ProjectDetailProps) => {
                 transition={{ ...transition, delay: 1 }}
                 className="container mx-auto mt-6 space-y-12 p-6 sm:mt-12 sm:space-y-16"
               >
-                <div className="mx-auto grid max-w-6xl justify-center lg:grid-cols-4">
+                <div className="mx-auto grid max-w-6xl lg:grid-cols-4">
                   <h2 className="mb-4 text-xl font-medium text-darkerAccent lg:mb-0 lg:text-lg">
                     Descrição
                   </h2>
@@ -139,7 +139,7 @@ export const ProjectDetail = ({ scrolled }: ProjectDetailProps) => {
                   </p>
                 </div>
 
-                <div className="mx-auto grid max-w-6xl justify-center lg:grid-cols-4">
+                <div className="mx-auto grid max-w-6xl lg:grid-cols-4">
                   <h2 className="mb-4 text-xl font-medium text-darkerAccent lg:mb-0 lg:text-lg">
                     Informações
                   </h2>
@@ -160,7 +160,7 @@ export const ProjectDetail = ({ scrolled }: ProjectDetailProps) => {
                   </div>
                 </div>
 
-                <h2 className="text-center text-3xl font-medium text-darkerAccent">
+                <h2 className="text-center border-t pt-8 border-black/10 text-3xl font-medium ">
                   Imagens do projeto:
                 </h2>
                 <div className="mx-auto w-full space-y-8 lg:w-3/4">

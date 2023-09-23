@@ -52,13 +52,20 @@ export const About = () => {
 
             <div className="mx-auto w-[90%] border border-darkBrown/10"></div>
 
-            <div className=" my-4 mx-2 flex w-fit gap-8 rounded-xl bg-accent/20 py-4 px-3 font-Wulkan text-lg sm:m-6 sm:mx-auto sm:p-6 sm:text-3xl">
+            <div
+              className="my-4 flex w-full flex-col gap-4 rounded-xl bg-accent/20 py-4 px-3 text-center font-Wulkan text-xl font-semibold
+             text-darkBrown sm:m-6 sm:mx-auto sm:w-fit sm:flex-row sm:gap-8 sm:p-6 sm:text-3xl sm:font-normal"
+            >
               <h2>
-                <span className="mr-2 font-semibold text-accent">6+</span>
+                <span className="mr-2 text-2xl font-semibold text-accent">
+                  6+
+                </span>
                 Projetos feitos
               </h2>
               <h2>
-                <span className="mr-2 font-semibold text-accent">1</span>
+                <span className="mr-2 text-2xl font-semibold text-accent">
+                  1
+                </span>
                 Ano de experiência
               </h2>
             </div>

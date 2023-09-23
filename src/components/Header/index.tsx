@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { fadeInDown } from "../../utils/Animations";
 import { MenuModal } from "../MenuModal";
 
-import { BsDownload } from "react-icons/bs";
 import { MdOpenInNew } from "react-icons/md";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { useFetchCurriculum } from "../../hooks/useFetchCurriculum";
@@ -20,9 +19,6 @@ export const Header = ({ scrolled }: HeaderProps) => {
   const {getCurriculum} = useFetchCurriculum()
   
   const curriculumUrl = useMemo(() => getCurriculum(), []);
-
-  console.log()
-
 
   return (
     <motion.div

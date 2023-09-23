@@ -53,7 +53,7 @@ const itemAnimation = {
     y: 0,
     opacity: 1,
     transition: {
-      ease:"anticipate",
+      ease: "anticipate",
       duration: 2,
     },
   },

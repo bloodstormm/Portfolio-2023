@@ -32,7 +32,7 @@ export const Projects = () => {
             initial="hidden"
             animate="show"
             exit="exit"
-            className="grid gap-x-28 lg:grid-cols-2 xl:gap-x-36"
+            className="grid gap-x-28 md:gap-x-0 lg:gap-x-28 md:grid-cols-2 xl:gap-x-36"
           >
             {projects?.map((project, index) => (
               <ProjectCard key={index} project={project} position={index} />

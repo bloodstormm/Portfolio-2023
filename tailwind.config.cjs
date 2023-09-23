@@ -16,5 +16,5 @@ module.exports = {
         whity: "#fff7ec",
       },
     },
-  }
+  },
 };

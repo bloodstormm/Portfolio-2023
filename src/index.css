@@ -47,11 +47,11 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #c5995d;
+  @apply bg-accent;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #886b42;
+  @apply bg-darkerAccent;
 }
