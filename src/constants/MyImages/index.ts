@@ -19,7 +19,7 @@ export const aboutImages: aboutImagesType[] = [
   },
   {
     image: aboutPic3,
-    description: "Foto tirada em Ubatuba, na Gruta que Chora, em 2023.",
+    description: "Foto tirada em Ubatuba, na praia Grande, em 2023.",
   },
   {
     image: aboutPic4,
@@ -33,13 +33,12 @@ export const aboutImages: aboutImagesType[] = [
 
 export const homeImages: homeImagesType[] = [
   {
-    image: homePicture1
+    image: homePicture1,
   },
   {
-    image: homePicture2
+    image: homePicture2,
   },
   {
-    image: homePicture3
+    image: homePicture3,
   },
-
-]
+];
