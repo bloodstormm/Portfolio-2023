@@ -32,13 +32,14 @@ export const Home = () => {
         >
           <div className="flex flex-col gap-6">
             <h1 className="text-center font-Wulkan text-4xl font-medium uppercase text-darkBrown lg:text-left lg:text-5xl">
-              Dev <br className="hidden lg:block" /> Front-End | UI/UX
+              UX
+              <br className="hidden lg:block" /> Developer
             </h1>
 
             <p className="text-sm lg:text-base">
-              Olá, eu me chamo Nícolas, seja bem-vindo(a) ao meu Portfólio de
-              2023. Logo abaixo você encontra algumas das minhas redes, sinta-se
-              à vontade de entrar em contato! 😅
+              Olá, seja bem-vindo(a) ao meu portfólio de 2023! <br></br> Aqui você
+              encontrará meus projetos que venho feito ultimamente. Logo abaixo está algumas das minhas redes, sinta-se
+              à vontade de entrar em contato! 🤠
             </p>
             {/* Redes sociais */}
             <div className="flex justify-center gap-10 pb-4 text-3xl sm:justify-start sm:pt-6">

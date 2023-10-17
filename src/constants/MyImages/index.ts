@@ -6,7 +6,6 @@ import aboutPic4 from "../../assets/about/aboutPic4.webp";
 import aboutPic5 from "../../assets/about/aboutPic5.webp";
 import homePicture1 from "../../assets/homePic1.webp";
 import homePicture2 from "../../assets/homePic2.webp";
-import homePicture3 from "../../assets/homePic3.webp";
 export const aboutImages: aboutImagesType[] = [
   {
     image: aboutPic,
@@ -37,8 +36,5 @@ export const homeImages: homeImagesType[] = [
   },
   {
     image: homePicture2,
-  },
-  {
-    image: homePicture3,
-  },
+  }
 ];

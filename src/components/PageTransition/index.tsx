@@ -2,14 +2,24 @@ import { motion } from "framer-motion";
 import { transition } from "../../utils/Animations";
 
 export const PageTransition = () => (
-  <motion.div
-    initial={{ height: window.innerHeight }}
-    animate={{
-      height: 0,
-      top: [0, window.innerHeight],
-    }}
-    exit={{ height: window.innerHeight, top: [0, 0] }}
-    transition={{ ...transition, duration: 1 }}
-    className="absolute top-0 left-0 z-50 h-screen w-full bg-accent"
-  />
+  <>
+    <motion.div
+      initial={{ scaleY: 0 }}
+      animate={{
+        scaleY: 0,
+      }}
+      exit={{ scaleY: 1 }}
+      transition={{ ...transition, duration: 1 }}
+      className="fixed top-0 left-0 w-full h-screen origin-bottom bg-accent z-50 ncls-title"
+    />
+    <motion.div
+      initial={{ scaleY: 1 }}
+      animate={{
+        scaleY: 0,
+      }}
+      exit={{ scaleY: 0 }}
+      transition={{ ...transition, duration: 1 }}
+      className="fixed top-0 left-0 w-full h-screen origin-top bg-accent z-50 ncls-title"
+    />
+  </>
 );
