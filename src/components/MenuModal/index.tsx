@@ -7,7 +7,7 @@ import { MdOpenInNew } from "react-icons/md";
 import { useFetchCurriculum } from "../../hooks/useFetchCurriculum";
 import { useMemo } from "react";
 
-import { fadeIn, fadeInUp, scaleUp } from "../../utils/Animations";
+import { fadeIn, fadeInDown, scaleUp } from "../../utils/Animations";
 import { StaggerContainer, itemAnimation } from "../../utils/Animations";
 
 type MenuModalProps = {
@@ -48,8 +48,8 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
               >
                 <Dialog.Title
                   as={motion.h1}
-                  {...fadeInUp}
-                  transition={{ ...fadeInUp.transition, delay: 0.5 }}
+                  {...fadeInDown}
+                  transition={{ ...fadeInDown.transition, duration: 0.8, delay: 0.5 }}
                   className="font-Odasans text-5xl font-semibold text-accent"
                 >
                   NCLS
@@ -87,6 +87,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
                     </Link>
                   </motion.div>
                   <motion.div
+                    transition={{duration: 1.3}}
                     variants={itemAnimation}
                     className="w-full rounded-lg bg-accent/40 p-3"
                   >

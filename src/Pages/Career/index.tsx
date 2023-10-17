@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { fadeIn, fadeInUp } from "../../utils/Animations";
+import { fadeIn, fadeInDown } from "../../utils/Animations";
 
 import { EducationTimeline } from "../../components/EducationTimeline";
 import { ExperiencesTimeline } from "../../components/ExperiencesTimeline";
@@ -11,8 +11,8 @@ export const Career = () => (
     <PageTransition />
     <section className="mb-12 mt-6 flex w-full flex-col items-center lg:mt-0">
       <motion.h1
-        {...fadeInUp}
-        transition={{ ...fadeInUp.transition, delay: 0.5 }}
+        {...fadeInDown}
+        transition={{ ...fadeInDown.transition, delay: 0.5 }}
         className="mb-12 font-Wulkan text-5xl lg:text-7xl"
       >
         Minha Carreira:
