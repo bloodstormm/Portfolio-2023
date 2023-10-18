@@ -21,7 +21,7 @@ export const Career = () => (
       <motion.div
         {...fadeIn}
         transition={{ delay: 0.6 }}
-        className="flex flex-col gap-16 xl:divide-darkBrown/40 xl:divide-x xl:flex-row"
+        className="flex flex-col gap-16 xl:divide-darkBrown/40 dark:xl:divide-lightBrown/40 xl:divide-x xl:flex-row"
       >
         <ExperiencesTimeline />
         <EducationTimeline />

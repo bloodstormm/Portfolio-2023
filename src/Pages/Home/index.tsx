@@ -31,7 +31,7 @@ export const Home = () => {
           className="mx-auto grid items-center gap-4 p-8 md:grid-cols-2 lg:grid-cols-3 xl:gap-14 "
         >
           <div className="flex flex-col gap-6">
-            <h1 className="text-center font-Wulkan text-4xl font-medium uppercase text-darkBrown lg:text-left lg:text-5xl">
+            <h1 className="text-center font-Wulkan text-4xl font-medium uppercase lg:text-left lg:text-5xl">
               UX
               <br className="hidden lg:block" /> Developer
             </h1>
@@ -67,14 +67,14 @@ export const Home = () => {
             </div>
           </div>
 
-          <div className="mx-auto w-[90%] overflow-hidden rounded-full">
+          <div className="mx-auto w-[90%] shadow-2xl shadow-accent/20 overflow-hidden rounded-full">
             <motion.img
               whileHover={{ scale: 1.1 }}
               initial={{ scale: 1.15 }}
               animate={{ scale: 1 }}
               transition={{ ...transition, duration: 1.45, delay: 0.7 }}
               src={homeImage}
-              className="mx-auto w-full "
+              className="mx-auto w-full"
             />
           </div>
           <div className="relative h-2/3 ">
@@ -84,7 +84,7 @@ export const Home = () => {
 
             <Link
               to="/projects"
-              className="absolute group -bottom-4 hover:scale-105 transition duration-300 left-6 hidden h-32 w-32 items-center justify-center rounded-full border border-darkBrown sm:flex lg:left-14 lg:h-40 lg:w-40 xl:bottom-0"
+              className="absolute group -bottom-4 hover:scale-105 transition duration-300 left-6 hidden h-32 w-32 items-center justify-center rounded-full border border-darkBrown dark:border-lightBrown sm:flex lg:left-14 lg:h-40 lg:w-40 xl:bottom-0"
             >
               <div className="absolute top-2 right-1 h-6 w-6 rounded-full group-hover:animate-pulse transition bg-accent lg:top-1 lg:right-5"></div>
               <p className="w-20">Ver meus Projetos</p>
@@ -100,12 +100,12 @@ export const Home = () => {
           <img
             src={jnj}
             alt="jnj"
-            className="h-4 grayscale sm:h-6 lg:h-7 2xl:h-9"
+            className="h-4 grayscale dark:invert sm:h-6 lg:h-7 2xl:h-9"
           />
           <img
             src={opt}
             alt="opt"
-            className="h-7 grayscale sm:h-12 lg:h-14 2xl:h-16"
+            className="h-7 grayscale dark:brightness-200 sm:h-12 lg:h-14 2xl:h-16"
           />
           <img
             src={villarta}
@@ -120,18 +120,18 @@ export const Home = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 0.8 } }}
         exit={{ opacity: 0, transition: { duration: 0.8 } }}
-        className="absolute bottom-5 left-20 h-96 w-72 rounded-full bg-gradient-to-br from-accent to-transparent p-px sm:bottom-0 sm:rounded-t-full"
+        className="absolute bottom-5 left-20 h-96 w-72 rounded-full bg-gradient-to-br from-accent dark:from-darkAccent to-transparent p-px sm:bottom-0 sm:rounded-t-full"
       >
-        <div className="h-full w-full rounded-t-full bg-background"></div>
+        <div className="h-full w-full rounded-t-full bg-background dark:bg-darkBackground transition-colors duration-300" />
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 0.8 } }}
         exit={{ opacity: 0, transition: { duration: 0.8 } }}
-        className="absolute top-0 -right-0 h-64 w-56 rounded-b-full bg-gradient-to-tl
+        className="absolute top-0 right-0 h-64 w-56 rounded-b-full bg-gradient-to-tl
          from-accent to-transparent p-px "
       >
-        <div className="h-full w-full rounded-b-full bg-background"></div>
+        <div className="h-full w-full rounded-b-full dark:bg-darkBackground bg-background transition-colors duration-300" />
       </motion.div>
     </>
   );

@@ -32,7 +32,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
           <motion.div
             {...fadeIn}
             transition={{ duration: 0.7 }}
-            className="fixed inset-0 bg-darkBrown/30 backdrop-blur-sm"
+            className="fixed inset-0 bg-darkBrown/30 dark:bg-lightBrown/30 backdrop-blur-sm"
             aria-hidden="true"
           />
 
@@ -44,13 +44,13 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
               <Dialog.Panel
                 as={motion.div}
                 {...scaleUp}
-                className="relative mx-auto flex h-[32rem] w-[90%] flex-col items-center overflow-hidden rounded-2xl bg-white p-4"
+                className="relative mx-auto flex h-[32rem] w-[90%] flex-col items-center overflow-hidden rounded-2xl bg-whity dark:bg-darky p-4"
               >
                 <Dialog.Title
                   as={motion.h1}
                   {...fadeInDown}
                   transition={{ ...fadeInDown.transition, duration: 0.8, delay: 0.5 }}
-                  className="font-Odasans text-5xl font-semibold text-accent"
+                  className="font-Odasans text-5xl font-semibold text-accent dark:text-darkAccent"
                 >
                   NCLS
                 </Dialog.Title>
@@ -64,7 +64,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
                 >
                   <motion.div
                     variants={itemAnimation}
-                    className="w-full rounded-lg bg-accent/40 p-3"
+                    className="w-full rounded-lg bg-accent/40 dark:bg-darkAccent/40 p-3"
                   >
                     <Link
                       to="/"
@@ -76,7 +76,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
                   </motion.div>
                   <motion.div
                     variants={itemAnimation}
-                    className="w-full rounded-lg bg-accent/40 p-3"
+                    className="w-full rounded-lg bg-accent/40 dark:bg-darkAccent/40 p-3"
                   >
                     <Link
                       to="about"
@@ -89,7 +89,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
                   <motion.div
                     transition={{duration: 1.3}}
                     variants={itemAnimation}
-                    className="w-full rounded-lg bg-accent/40 p-3"
+                    className="w-full rounded-lg bg-accent/40 dark:bg-darkAccent/40 p-3"
                   >
                     <Link
                       to="projects"
@@ -101,7 +101,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
                   </motion.div>
                   <motion.div
                     variants={itemAnimation}
-                    className="w-full rounded-lg bg-accent/40 p-3"
+                    className="w-full rounded-lg bg-accent/40 dark:bg-darkAccent/40 p-3"
                   >
                     <Link
                       to="career"
@@ -113,7 +113,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
                   </motion.div>
                   <motion.div
                     variants={itemAnimation}
-                    className="w-full rounded-lg bg-accent/40 p-3"
+                    className="w-full rounded-lg bg-accent/40 dark:bg-darkAccent/40 p-3"
                   >
                     <Link
                       to="contact"
@@ -129,7 +129,7 @@ export const MenuModal = ({ isOpen, setIsOpen }: MenuModalProps) => {
                     href={curriculumUrl}
                     download
                     target="_blank"
-                    className="mt-8 flex items-center gap-3 rounded-xl bg-accent py-4 px-6 text-white"
+                    className="mt-8 flex items-center gap-3 rounded-xl bg-accent dark:bg-darkAccent py-4 px-6 text-white"
                   >
                     Ver Currículo
                     <MdOpenInNew />

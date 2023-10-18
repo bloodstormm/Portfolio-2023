@@ -47,7 +47,7 @@ export const ProjectDetail = ({ scrolled }: ProjectDetailProps) => {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: 50, opacity: 0 }}
                   transition={{ ...transition, delay: 1 }}
-                  className="text-sm text-darkerAccent"
+                  className="text-sm text-darkerAccent dark:text-lighterAccent"
                 >
                   {filteredProject?.stacks.split(";").join(" · ")}
                 </motion.h4>
@@ -130,7 +130,7 @@ export const ProjectDetail = ({ scrolled }: ProjectDetailProps) => {
                 className="container mx-auto mt-6 space-y-12 p-6 sm:mt-12 sm:space-y-16"
               >
                 <div className="mx-auto grid max-w-6xl lg:grid-cols-4">
-                  <h2 className="mb-4 text-xl font-medium text-darkerAccent lg:mb-0 lg:text-lg">
+                  <h2 className="mb-4 text-xl font-medium text-darkerAccent dark:text-lighterAccent lg:mb-0 lg:text-lg">
                     Descrição
                   </h2>
 
@@ -140,27 +140,27 @@ export const ProjectDetail = ({ scrolled }: ProjectDetailProps) => {
                 </div>
 
                 <div className="mx-auto grid max-w-6xl lg:grid-cols-4">
-                  <h2 className="mb-4 text-xl font-medium text-darkerAccent lg:mb-0 lg:text-lg">
+                  <h2 className="mb-4 text-xl font-medium text-darkerAccent dark:text-lighterAccent lg:mb-0 lg:text-lg">
                     Informações
                   </h2>
 
-                  <div className="col-span-3 max-w-3xl space-y-2  text-base lg:text-lg">
+                  <div className="col-span-3 max-w-3xl space-y-2 text-base lg:text-lg">
                     <p>
                       Projeto feito em:
-                      <span className="ml-1 font-medium text-accent">
+                      <span className="ml-1 font-medium text-accent dark:text-lighterAccent">
                         {filteredProject?.developedIn}
                       </span>
                     </p>
-                    <p className="">
+                    <p>
                       Stacks utilizadas:
-                      <span className="ml-1 font-medium text-accent">
+                      <span className="ml-1 font-medium text-accent dark:text-lighterAccent">
                         {filteredProject?.stacks.split(";").join(" - ")}
                       </span>
                     </p>
                   </div>
                 </div>
 
-                <h2 className="text-center border-t pt-8 border-black/10 text-3xl font-medium ">
+                <h2 className="text-center border-t pt-8 border-darky/10 dark:border-whity/10 text-3xl font-medium ">
                   Imagens do projeto:
                 </h2>
                 <div className="mx-auto w-full space-y-8 lg:w-3/4">

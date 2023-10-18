@@ -10,7 +10,7 @@ export const PageTransition = () => (
       }}
       exit={{ scaleY: 1 }}
       transition={{ ...transition, duration: 1 }}
-      className="fixed top-0 left-0 w-full h-screen origin-bottom bg-accent z-50 ncls-title"
+      className="fixed top-0 left-0 w-full h-screen origin-bottom bg-accent dark:bg-darky z-50 ncls-title"
     />
     <motion.div
       initial={{ scaleY: 1 }}
@@ -19,7 +19,7 @@ export const PageTransition = () => (
       }}
       exit={{ scaleY: 0 }}
       transition={{ ...transition, duration: 1 }}
-      className="fixed top-0 left-0 w-full h-screen origin-top bg-accent z-50 ncls-title"
+      className="fixed top-0 left-0 w-full h-screen origin-top bg-accent dark:bg-darky z-50 ncls-title"
     />
   </>
 );
