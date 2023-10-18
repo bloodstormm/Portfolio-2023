@@ -1,4 +1,4 @@
-![header](https://i.imgur.com/kpVNOUq.png)
+![header](https://i.imgur.com/NOVOrX3.png)
 
 # :fireworks: Portifólio 2023
 
