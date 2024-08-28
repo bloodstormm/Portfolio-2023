@@ -6,7 +6,7 @@ export const useFetchCurriculum = () => {
 
         const { data } = supabase.storage
           .from("curriculo-portfolio")
-          .getPublicUrl(`Curriculo 2023.pdf`);
+          .getPublicUrl(`Curriculo - Nicolas Malachias.pdf`);
     
         const curriculum = data.publicUrl;
 

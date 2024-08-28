@@ -16,17 +16,17 @@ export const experiences: ExperiencesType[] = [
     company: "Johnson & Johnson",
     initialDate: "01/2023",
     finalDate: "Atualmente",
-    role: "Estágio - UX Developer",
-    stack: [FaJira, FaDrupal, FaFigma],
-    description: "Responsável pela criação de páginas interativas, com o foco na usabilidade e na experiência do usuário final. Capaz de pensar e falar a linguagem dos designers e desenvolvedores. Ajudando a traduzir a visão do design para a equipe de desenvolvimento de uma forma que eles possam analisar e executar com eficiência."
+    role: "Estágio",
+    stack: [FaJira, FaDrupal, FaFigma, FaReact],
+    description: "Atuo como Desenvolvedor Front-End em um portal chamado Janssen Pro, focando na experiência do usuário final. Desenvolvo componentes do zero e ajusto a estrutura do site em HTML, CSS e JS. Compreendo a linguagem dos designers e desenvolvedores, traduzindo a visão do design para o desenvolvimento de forma eficiente."
   },
   {
     company: "Optimus GIS",
     initialDate: "08/2022",
     finalDate: "12/2022",
-    role: "Estágio - Front-End",
+    role: "Estágio",
     description:
-      "Ajudava o time na parte web, usando ReactJS, TailwindCSS e algumas outras ferramentas",
+      "Trabalhei na criação de interfaces web para clientes, utilizando ReactJS e TailwindCSS. Fui responsável por desenvolver e integrar front-end com APIs",
     stack: [FaReact, SiTailwindcss, FaHtml5],
   },
   {
@@ -35,7 +35,7 @@ export const experiences: ExperiencesType[] = [
     finalDate: "06/2022",
     role: "Menor Aprendiz",
     description:
-      "Atuava no setor de compras/almoxarifado. Escritório em geral.",
+      "Atuei no setor de compras e almoxarifado, gerenciando cotações e o controle de estoque de peças. Fui reconhecido por propor melhorias na organização das atividades",
     stack: [RiFileExcel2Line, FaPython, HiOutlineMail],
   },
 ];

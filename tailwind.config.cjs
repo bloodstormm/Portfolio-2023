@@ -13,7 +13,7 @@ module.exports = {
         background: "#e5ddd4",
         darkBackground: "#161618",
         accent: "#c5995d",
-        darkAccent: "#A1763A",
+        darkAccent: "#bb9157",
         darkerAccent: "#9a7a4d",
         lighterAccent: "#B29366",
         darkBrown: "#3d3731",

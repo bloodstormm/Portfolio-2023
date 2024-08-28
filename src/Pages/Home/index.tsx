@@ -32,12 +32,12 @@ export const Home = () => {
         >
           <div className="flex flex-col gap-6">
             <h1 className="text-center font-Wulkan text-4xl font-medium uppercase lg:text-left lg:text-5xl">
-              UX
+              Front-End
               <br className="hidden lg:block" /> Developer
             </h1>
 
             <p className="text-sm lg:text-base">
-              Olá, seja bem-vindo(a) ao meu portfólio de 2023! <br></br> Aqui você
+              Olá, seja bem-vindo(a) ao meu portfólio! <br></br> Aqui você
               encontrará meus projetos que venho feito ultimamente. Logo abaixo está algumas das minhas redes, sinta-se
               à vontade de entrar em contato! 🤠
             </p>
@@ -67,7 +67,7 @@ export const Home = () => {
             </div>
           </div>
 
-          <div className="mx-auto w-[90%] shadow-2xl shadow-accent/20 overflow-hidden rounded-full">
+          <div className="mx-auto w-[90%] shadow-2xl overflow-hidden rounded-full">
             <motion.img
               whileHover={{ scale: 1.1 }}
               initial={{ scale: 1.15 }}

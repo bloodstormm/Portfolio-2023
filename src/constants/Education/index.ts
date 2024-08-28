@@ -8,7 +8,7 @@ export const education: EducationType[] = [
     finalDate: "12/2024",
     degree: "Ensino Superior",
     description:
-      "Atualmente no 4º semestre, tendo experiências com a linguagem JAVA e seus paradigmas de Programação Orientada a Objetos.",
+      "Atualmente no 6º semestre, tendo experiências com a linguagem JAVA e seus paradigmas de Programação Orientada a Objetos.",
   },
 
   {

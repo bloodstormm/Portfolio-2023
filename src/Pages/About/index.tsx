@@ -43,11 +43,12 @@ export const About = () => {
             </h1>
 
             <p className="max-w-sm py-8 text-sm sm:max-w-2xl sm:text-base">
-              Eu me chamo Nícolas Malachias. Tenho {idade} anos e atualmente sou
-              estudante de Análise e Desenvolvimento de Sistemas na UNITAU.
-              Estou estagiando na Johnson & Johnson na área de TI. Amo música e
-              curto muito tocar violão e guitarra, além de praticar ciclismo e
-              jogar basquete algumas vezes.
+              Eu me chamo Nícolas Malachias. Tenho {idade} anos e sou um
+              desenvolvedor Front-End apaixonado por criar interfaces atrativas
+              e intuitivas. Com experiência em ReactJS, TailwindCSS e Drupal,
+              trabalho na Johnson & Johnson, gerenciando um portal há mais de um
+              ano. Tenho experiência em liderança de pequenas equipes, aprendo e
+              me adapto rapidamente a novos desafios.
             </p>
 
             <div className="mx-auto w-[90%] border border-darkBrown/10 dark:border-lightBrown/10"></div>
@@ -61,7 +62,7 @@ export const About = () => {
               </h2>
               <h2>
                 <span className="mr-2 text-2xl font-semibold text-accent">
-                  1
+                  1,5+
                 </span>
                 Ano de experiência
               </h2>
@@ -82,7 +83,7 @@ export const About = () => {
               <HiOutlineCodeBracket className="mx-auto mb-2 text-4xl text-accent" />
               <h3 className="font-semibold lg:text-lg ">Front-end</h3>
               <p className="pt-4">
-                Atualmente a linguagem que mais uso é Typescript, usando em
+                Atualmente trabalho com Drupal, usando-o em
                 conjunto com React e TailwindCSS
               </p>
             </motion.div>
